@@ -1,0 +1,58 @@
+{
+    "name": "Opensim",
+    "slug": "opensim",
+    "version": "1.0.0",
+    "core_version": "0.0.1",
+    "description": "Core Module for Opensim",
+    "keywords": ["opensim","robust"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jefferson Costella",
+            "email": "jeff@localhost",
+            "role": "Lead Developer"
+        }
+    ],
+    "options": {
+            "handles": "opensim",
+            "auto": true
+    },
+    "roles" : [
+        {
+            "name":"Access OpenSim Module",
+            "description":"Permit access to the opensim module.",
+            "slug":"backend_robust_robust_get_index",
+            "value":false
+        }
+    ],
+    "required":[
+        {
+            "name": "settings",
+            "version": "1.0.0"
+        },
+        {
+            "name": "users",
+            "version": "1.0.0"
+        }
+    ],
+    "recommended": [
+        {
+            "name": "groups",
+            "version": "1.0.0"
+        },
+        {
+            "name": "permissions",
+            "version": "1.0.0"
+        }
+    ],
+    "menu": [
+        {
+            "main_menu" : "Modules",
+            "title"     : "OpenSim",
+            "url"       : "opensim",
+            "class"     : "",
+            "li_class"  : "",
+            "children"  : []
+        }
+    ]
+}

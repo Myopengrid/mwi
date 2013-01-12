@@ -1,0 +1,7 @@
+{
+    "name":"Base Backend Theme",
+    "description":"Base backend apllication theme.",
+    "version":"1.0",
+    "layer":"backend",
+    "slug":"base_bke"
+}

@@ -1,0 +1,93 @@
+{
+    "name": "Groups",
+    "slug": "groups",
+    "version": "1.0.0",
+    "core_version": "0.0.1",
+    "is_core": true,
+    "type": "module",
+    "description": "Groups module",
+    "keywords": ["template","parser"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jefferson Costella",
+            "email": "jeff@localhost",
+            "role": "Lead Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": { "Lex": "lib/" }
+    },
+    "options": {
+            "handles": "groups",
+            "auto": true
+    },
+    "roles" : [
+        {
+            "name":"Access user groups module",
+            "description":"Permit access to the user groups module to create groups.",
+            "slug":"backend_groups_groups_get_index",
+            "value":false
+        },
+        {
+            "name":"Ajax Functionality for groups module",
+            "description":"Ajax functionality for groups module (slug autocomplete create new group form).",
+            "slug":"backend_groups_groups_post_check_slug",
+            "value":false
+        },
+        {
+            "name":"View new user group form page",
+            "description":"Allow users to view create new group form.",
+            "slug":"backend_groups_groups_get_new",
+            "value":false
+        },
+        {
+            "name":"Create new user group",
+            "description":"Allow users to create new user group the save action on the form.",
+            "slug":"backend_groups_groups_post_create",
+            "value":false
+        },
+        {
+            "name":"Edit user group view form",
+            "description":"Allow users to view edit user group form.",
+            "slug":"backend_groups_groups_get_edit",
+            "value":false
+        },
+        {
+            "name":"Save edit user group form",
+            "description":"Allow users to save changes on users groups.",
+            "slug":"backend_groups_groups_put_update",
+            "value":false
+        },
+        {
+            "name":"Delete User Group",
+            "description":"Allow users to delete user group.",
+            "slug":"backend_groups_groups_delete_destroy","value":false
+        }
+    ],
+    "required":[
+        {
+            "name": "settings",
+            "version": "1.0.0"
+        }
+    ],
+    "recommended": [
+        {
+            "name": "permissions",
+            "version": "1.0.0"
+        }
+    ],
+    "menu": [
+        {
+            "main_menu" : "Users",
+            "title"     : "Groups",
+            "url"       : "groups",
+            "class"     : "",
+            "li_class"  : "",
+            "children"  : []
+        }
+    ]
+}

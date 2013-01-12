@@ -1,0 +1,8 @@
+<p>Hello {{ user:username }},</p>
+<p>
+    It seems you have requested a password reset. Please click this link to complete the reset: 
+    <a href="{{ url:base }}/registration/reset_pass/{{ user:id }}/{{ forgotten_password_code }}">{{ url:base }}/registration/reset_pass/{{ user:id }}/{{ forgotten_password_code }}</a>
+</p>
+<p>
+    If you did not request a password reset please disregard this message. No further action is necessary.
+</p>

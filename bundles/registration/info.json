@@ -1,0 +1,79 @@
+{
+    "name": "Registration",
+    "slug": "registration",
+    "version": "1.0.0",
+    "core_version": "0.0.1",
+    "type": "library",
+    "description": "A basic registration module",
+    "keywords": ["template","parser"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jefferson Costella",
+            "email": "jeff@localhost",
+            "role": "Lead Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": { "Lex": "lib/" }
+    },
+    "options": {
+            "handles": "registration",
+            "auto": true
+    },
+    "roles" : [
+        {
+            "name":"Access Registration Module",
+            "description":"Permit access to the registration module settings.",
+            "slug":"backend_registration_registration_get_index",
+            "value":false
+        },
+        {
+            "name":"Save Registration Module Settings",
+            "description":"Allow users to save settings in the registration module",
+            "slug":"backend_registration_registration_put_update",
+            "value":false
+        }
+    ],
+    "required":[
+        {
+            "name": "settings",
+            "version": "1.0.0"
+        },
+        {
+            "name": "users",
+            "version": "1.0.0"
+        },
+        {
+            "name": "email",
+            "version": "1.0.0"
+        }
+    ],
+    "recommended": [
+        {
+            "name": "groups",
+            "version": "1.0.0"
+        }
+    ],
+    "menu": [
+        {
+            "main_menu" : "Users",
+            "title"     : "Registration",
+            "url"       : "registration",
+            "class"     : "",
+            "li_class"  : "",
+            "children"  : []
+        },
+        {
+            "main_menu" : "Modules",
+            "title"     : "Registration",
+            "url"       : "registration",
+            "class"     : "",
+            "li_class"  : "",
+            "children"  : []
+        }
+    ]
+}

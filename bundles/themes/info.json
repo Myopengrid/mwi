@@ -1,0 +1,116 @@
+{
+    "name": "Themes",
+    "slug": "themes",
+    "core_version": "0.0.1",
+    "version": "1.0.0",
+    "is_core": true,
+    "type": "module",
+    "description": "Provides easy interface to install themes into the application.",
+    "keywords": ["template","theme","layout"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jefferson Costella",
+            "email": "jeff@localhost",
+            "role": "Lead Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": { "themes": "libraries/" }
+    },
+    "options": {
+            "handles": "themes",
+            "auto": true
+    },
+    "roles" : [
+        {
+            "name":"View Frontend themes page",
+            "description":"Permit access to the fronend themes page.",
+            "slug":"backend_themes_themes_get_index",
+            "value":false
+        },
+        {
+            "name":"View Backend themes page",
+            "description":"Allow users to access the backend themes page.",
+            "slug":"backend_themes_themes_get_backend",
+            "value":false
+        },
+        {
+            "name":"View not installed themes page",
+            "description":"Allow users access the not installed themes page.",
+            "slug":"backend_themes_themes_get_not_installed",
+            "value":false
+        },
+        {
+            "name":"View edit theme layout page",
+            "description":"Allow users to view the edit layout form",
+            "slug":"backend_themes_themes_get_edit",
+            "value":false
+        },
+        {
+            "name":"View upload new theme page",
+            "description":"Allow users to view the upload new theme page.",
+            "slug":"backend_themes_themes_get_upload",
+            "value":false
+        },
+        {
+            "name":"Edit/Set theme as default",
+            "description":"Allow users to change the default theme.",
+            "slug":"backend_themes_themes_put_set_default",
+            "value":false
+        },
+        {
+            "name":"Edit/Update theme layout",
+            "description":"Allow users to update layouts (save) action on layout form",
+            "slug":"backend_themes_themes_put_update",
+            "value":false
+        },
+        {
+            "name":"Create/Upload new theme",
+            "description":"Allow users to upload a new theme. (upload) action on upload new theme page",
+            "slug":"backend_themes_themes_post_upload",
+            "value":false
+        },
+        {
+            "name":"Install new theme",
+            "description":"Allow users to install",
+            "slug":"backend_themes_themes_post_install",
+            "value":false
+        },
+        {
+            "name":"Delete themes",
+            "description":"Allow users to delete application themes.",
+            "slug":"backend_themes_themes_delete_destroy",
+            "value":false
+        }
+    ],
+    "required":[
+        {
+            "name": "settings",
+            "version": "1.0.0"
+        }
+    ],
+    "recommended": [
+        {
+            "name": "groups",
+            "version": "1.0.0"
+        },
+        {
+            "name": "permissions",
+            "version": "1.0.0"
+        }
+    ],
+    "menu": [
+        {
+            "main_menu" : "Design",
+            "title"     : "Themes",
+            "url"       : "themes",
+            "class"     : "",
+            "li_class"  : "",
+            "children"  : []
+        }
+    ]
+}

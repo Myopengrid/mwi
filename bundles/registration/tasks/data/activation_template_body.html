@@ -1,0 +1,17 @@
+<p>Hello {{ user:username }},</p>
+<p>
+  Thank you for registering at {{ settings:site_name }}. Before we can activate your account, please 
+  complete the registration process by clicking on the following link:
+</p>
+<p>
+  <a href="{{ url:base }}/registration/activate/{{ activation_code }}">{{ url:base }}/registration/activate/{{ 
+  activation_code }}</a>
+</p>
+<p>&nbsp;</p>
+<p>
+  In case your email program does not recognize the above link as, please direct your browser to the 
+  following URL:
+</p>
+<p>
+  <a href="{{ url:base }}/registration/activate/{{ activation_code }}">{{ url:base }}/registration/activate/{{ activation_code }}</a>
+</p>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ $page_title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="{{ URL::base() }}/themes/base_fte/assets/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+    <link href="{{ URL::base() }}/themes/base_fte/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="{{ URL::base() }}/themes/base_fte/assets/css/docs.css" rel="stylesheet">
+    {{ Asset::styles() }}
+    {{ Asset::container('page')->styles() }}
+
+    {{ Asset::scripts() }}
+    {{ Asset::container('page')->scripts() }}
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="{{ URL::base() }}/themes/base_fte/assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ URL::base() }}/themes/base_fte/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ URL::base() }}/themes/base_fte/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ URL::base() }}/themes/base_fte/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="{{ URL::base() }}/themes/base_fte/assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body>
+
+    {{ themes\render_partial('header_nav') }}
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        
+        <div class="span3">
+
+        {{ themes\render_partial('sidebar_nav') }}
+
+        </div><!--/span-->
+        
+        <div style="min-height:200px; margin-top:15px;" class="span9">
+
+          {{ $theme_content }}
+
+        </div><!--/span-->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+
+        {{ themes\render_partial('footer') }}
+        
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ URL::base() }}/themes/base_fte/assets/js/jquery.js"></script>
+    <script src="{{ URL::base() }}/themes/base_fte/assets/js/bootstrap.min.js"></script>
+    {{ Asset::container('footer')->scripts() }}
+  </body>
+</html>

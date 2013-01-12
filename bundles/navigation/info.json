@@ -1,0 +1,116 @@
+{
+    "name": "Navigation",
+    "slug": "navigation",
+    "version": "1.0.0",
+    "core_version": "0.0.1",
+    "is_core": true,
+    "type": "module",
+    "description": "Provides menu blocks for application",
+    "keywords": ["template","parser"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jefferson Costella",
+            "email": "jeff@localhost",
+            "role": "Lead Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": { "Lex": "lib/" }
+    },
+    "options": {
+            "handles": "navigation",
+            "auto": true
+    },
+    "roles" : [
+        {
+            "name":"Access navigation module",
+            "description":"Permit access to the navigation module to create links and navigation groups.",
+            "slug":"backend_navigation_groups_get_index",
+            "value":false
+        },
+        {
+            "name":"View New Navigation Group Form",
+            "description":"Permit user to view new navigation group form.",
+            "slug":"backend_navigation_groups_get_new",
+            "value":false
+        },
+        {
+            "name":"Create Navigation Group",
+            "description":"Permit user to create a navigation group.",
+            "slug":"backend_navigation_groups_post_create",
+            "value":false
+        },
+        {
+            "name":"Delete Navigation Group",
+            "description":"Permit user to delete a navigation group. (All links with the group will be deleted as well)",
+            "slug":"backend_navigation_groups_delete_destroy",
+            "value":false
+        },
+        {
+            "name":"View Navigation Link Details",
+            "description":"Permit user to view link details.",
+            "slug":"backend_navigation_links_get_show",
+            "value":false
+        },
+        {
+            "name":"View Edit Link Form",
+            "description":"Allow users to view edit link form",
+            "slug":"backend_navigation_links_get_edit",
+            "value":false
+        },
+        {
+            "name":"Update Link Information",
+            "description":"Allow users to update link iformation (save action edit form).",
+            "slug":"backend_navigation_links_put_update",
+            "value":false
+        },
+        {
+            "name":"View Create New Link Form",
+            "description":"Allow users to view create link form",
+            "slug":"backend_navigation_links_get_new",
+            "value":false
+        },
+        {
+            "name":"Create New Link",
+            "description":"Allow users to create a new link (create action new link form).",
+            "slug":"backend_navigation_links_post_create",
+            "value":false
+        },
+        {
+            "name":"Delete a Link",
+            "description":"Allow users to delete links",
+            "slug":"backend_navigation_links_delete_destroy",
+            "value":false
+        }
+    ],
+    "required":[
+        {
+            "name": "settings",
+            "version": "1.0.0"
+        }
+    ],
+    "recommended": [
+        {
+            "name": "groups",
+            "version": "1.0.0"
+        },
+        {
+            "name": "permissions",
+            "version": "1.0.0"
+        }
+    ],
+    "menu": [
+        {
+            "main_menu" : "Design",
+            "title"     : "Navigation",
+            "url"       : "navigation",
+            "class"     : "",
+            "li_class"  : "",
+            "children"  : []
+        }
+    ]
+}

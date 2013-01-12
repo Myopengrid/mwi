@@ -1,0 +1,130 @@
+{
+    "name": "Email",
+    "slug": "email",
+    "version": "1.0.0",
+    "core_version": "0.0.1",
+    "is_core": true,
+    "type": "module",
+    "description": "Email module",
+    "keywords": ["template","parser"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jefferson Costella",
+            "email": "jeff@localhost",
+            "role": "Lead Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": { "Lex": "lib/" }
+    },
+    "options": {
+            "handles": "email",
+            "auto": true
+    },
+    "roles" : [
+        {
+            "name":"Access email settings",
+            "description":"View email settings.",
+            "slug":"backend_email_email_get_index",
+            "value":false
+        },
+        {
+            "name":"Save email settings",
+            "description":"Permit user to save changes made on settings form.",
+            "slug":"backend_email_email_put_update",
+            "value":false
+        },
+        {
+            "name":"Ajax Get Users",
+            "description":"Used to fill the users drop down",
+            "slug":"backend_email_email_post_get_users",
+            "value":false
+        },
+        {
+            "name":"View send email page",
+            "description":"Allow users view the send email form if this is enabled. Its recommended enable get users as well",
+            "slug":"backend_email_email_get_new",
+            "value":false
+        },
+        {
+            "name":"Send email Action",
+            "description":"Allow user send the email",
+            "slug":"backend_email_email_post_create",
+            "value":false
+        },
+        {
+            "name":"View email templates list page",
+            "description":"Allow users view email templates list page.",
+            "slug":"backend_email_template_get_index",
+            "value":false
+        },
+        {
+            "name":"Access edit email template form",
+            "description":"Allow users access view the edit template form.",
+            "slug":"backend_email_template_get_edit",
+            "value":false
+        },
+        {
+            "name":"Save edit form action",
+            "description":"Allow users to save the edited form.",
+            "slug":"backend_email_template_put_update",
+            "value":false
+        },
+        {
+            "name":"Access create or copy template form",
+            "description":"Allow users access the new template form.",
+            "slug":"backend_email_template_get_new",
+            "value":false
+        },
+        {
+            "name":"Save or copy a new form action",
+            "description":"Allow users save or copy the template.",
+            "slug":"backend_email_template_post_create",
+            "value":false
+        },
+        {
+            "name":"Delete email templates",
+            "description":"Allow users delete email templates.",
+            "slug":"backend_email_template_delete_destroy",
+            "value":false
+        }
+    ],
+    "required":[
+        {
+            "name": "settings",
+            "version": "1.0.0"
+        },
+        {
+            "name": "users",
+            "version": "1.0.0"
+        }
+    ],
+    "recommended": [
+        {
+            "name": "groups",
+            "version": "1.0.0"
+        },
+        {
+            "name": "permissions",
+            "version": "1.0.0"
+        },
+        {
+            "name": "registration",
+            "version": "1.0.0"
+        }
+    ],
+    "menu": [
+        {
+            "main_menu" : "Modules",
+            "title"     : "Email",
+            "url"       : "email",
+            "class"     : "",
+            "li_class"  : "",
+            "children"  : []
+        }
+    ]
+}

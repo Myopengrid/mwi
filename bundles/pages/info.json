@@ -1,0 +1,104 @@
+{
+    "name": "Pages",
+    "slug": "pages",
+    "version": "1.0.0",
+    "core_version": "0.0.1",
+    "is_core": true,
+    "type": "module",
+    "description": "Provides easy way to create application pages",
+    "keywords": ["design","pages"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jefferson Costella",
+            "email": "jeff@localhost",
+            "role": "Lead Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": { "Pages": "libraries/" }
+    },
+    "options": {
+            "handles": "pages",
+            "auto": true
+    },
+    "roles" : [
+        {
+            "name":"Access pages module",
+            "description":"Permit access to the pages index view.",
+            "slug":"backend_pages_pages_get_index",
+            "value":false
+        },
+        {
+            "name":"View page details",
+            "description":"Allow users to view specific page details.",
+            "slug":"backend_pages_pages_get_show",
+            "value":false
+        },
+        {
+            "name":"Preview pages",
+            "description":"Allow users to preview pages",
+            "slug":"backend_pages_pages_get_preview",
+            "value":false
+        },
+        {
+            "name":"View edit page form",
+            "description":"Allow users view the page edit form",
+            "slug":"backend_pages_pages_get_edit",
+            "value":false
+        },
+        {
+            "name":"Page update",
+            "description":"Allow users to update pages (save) action on edit form, and re-order pages.",
+            "slug":"backend_pages_pages_put_update",
+            "value":false
+        },
+        {
+            "name":"New page form",
+            "description":"Allow users to view the new and duplicate page form.",
+            "slug":"backend_pages_pages_get_new",
+            "value":false
+        },
+        {
+            "name":"Create New page",
+            "description":"Allow users to create new pages (save) action on new page form.",
+            "slug":"backend_pages_pages_post_create",
+            "value":false
+        },
+        {
+            "name":"Delete pages",
+            "description":"Allow users to delete pages.",
+            "slug":"backend_pages_pages_delete_destroy",
+            "value":false
+        }
+    ],
+    "required":[
+        {
+            "name": "settings",
+            "version": "1.0.0"
+        }
+    ],
+    "recommended": [
+        {
+            "name": "groups",
+            "version": "1.0.0"
+        },
+        {
+            "name": "permissions",
+            "version": "1.0.0"
+        }
+    ],
+    "menu": [
+        {
+            "main_menu" : "Content",
+            "title"     : "Pages",
+            "url"       : "pages",
+            "class"     : "",
+            "li_class"  : "",
+            "children"  : []
+        }
+    ]
+}

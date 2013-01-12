@@ -1,0 +1,104 @@
+{
+    "name": "Users",
+    "slug": "users",
+    "version": "1.0.0",
+    "core_version": "0.0.1",
+    "is_core": true,
+    "type": "library",
+    "description": "Users Module",
+    "keywords": ["template","parser"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jefferson Costella",
+            "email": "jeff@localhost",
+            "role": "Lead Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": { "Lex": "lib/" }
+    },
+    "options": {
+            "handles": "users",
+            "auto": true
+    },
+    "roles" : [
+        {
+            "name":"Access Users Module",
+            "description":"Permit access to the users module to manage users.",
+            "slug":"backend_users_users_get_index",
+            "value":false
+        },
+        {
+            "name":"Access Users Module JavaScript",
+            "description":"Permit access to the users module to manage users (javascript functionalities).",
+            "slug":"backend_users_users_post_index",
+            "value":false
+        },
+        {
+            "name":"Active/Delete Bulk Users Action",
+            "description":"Permit activation or deletion of bulk users.",
+            "slug":"backend_users_users_post_action",
+            "value":false
+        },
+        {
+            "name":"Create New User Form",
+            "description":"Allow users view the create new user form.",
+            "slug":"backend_users_users_get_new",
+            "value":false
+        },
+        {
+            "name":"Create New User Action",
+            "description":"Allow users to create new users",
+            "slug":"backend_users_users_post_create",
+            "value":false
+        },
+        {
+            "name":"View Edit User Form",
+            "description":"Allow users to view users edit form.",
+            "slug":"backend_users_users_get_edit",
+            "value":false
+        },
+        {
+            "name":"Update User Action",
+            "description":"Allow users to update user (edit user form action).",
+            "slug":"backend_users_users_put_update",
+            "value":false
+        },
+        {
+            "name":"Delete User",
+            "description":"Allow users to delete website navigation groups.",
+            "slug":"backend_users_users_delete_destroy",
+            "value":false
+        }
+    ],
+    "required":[
+        {
+            "name": "settings",
+            "version": "1.0.0"
+        }
+    ],
+    "recommended": [
+        {
+            "name": "groups",
+            "version": "1.0.0"
+        },
+        {
+            "name": "permissions",
+            "version": "1.0.0"
+        }
+    ],
+    "menu": [
+        {
+            "main_menu" : "Users",
+            "title"     : "Manage Users",
+            "url"       : "users",
+            "class"     : "",
+            "li_class"  : "",
+            "children"  : []
+        }
+    ]
+}

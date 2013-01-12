@@ -1,0 +1,2 @@
+RewriteEngine on 
+RewriteRule file1\.txt file2.txt

@@ -1,0 +1,101 @@
+{
+    "name": "Modules core module",
+    "slug": "modules",
+    "version": "1.0.0",
+    "core_version": "0.0.1",
+    "is_core": true,
+    "type": "module",
+    "description": "Application core modules module. Controls all modules in the application",
+    "keywords": ["template","parser"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jefferson Costella",
+            "email": "jeff@localhost",
+            "role": "Lead Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": { "Lex": "lib/" }
+    },
+    "options": {
+            "handles": "modules",
+            "auto": true
+    },
+    "roles" : [
+        {
+            "name":"Access Modules",
+            "description":"Permit access to the modules to enable, disable, install and delete modules.",
+            "slug":"backend_modules_modules_get_index",
+            "value":false
+        },
+        {
+            "name":"Access Backend Modules",
+            "description":"Permit access to the core modules to enable, disable, install and delete modules.",
+            "slug":"backend_modules_modules_get_core",
+            "value":false
+        },
+        {
+            "name":"Upload new module view",
+            "description":"Permit access to the upload new module form.",
+            "slug":"backend_modules_modules_get_upload",
+            "value":false
+        },
+        {
+            "name":"Upload new module Action",
+            "description":"Permit user to upload module (upload) action upload form.",
+            "slug":"backend_modules_modules_post_upload",
+            "value":false
+        },
+        {
+            "name":"Install new module",
+            "description":"Permit user to install a module.",
+            "slug":"backend_modules_modules_post_install",
+            "value":false
+        },
+        {
+            "name":"Disable Module",
+            "description":"Allow users to disable modules.",
+            "slug":"backend_modules_modules_put_disable",
+            "value":false
+        },
+        {
+            "name":"Enable Module",
+            "description":"Allow users to enable modules.",
+            "slug":"backend_modules_modules_put_enable",
+            "value":false
+        },
+        {
+            "name":"Uninstall module",
+            "description":"Allow users to uninstall a module.",
+            "slug":"backend_modules_modules_delete_uninstall",
+            "value":false
+        },
+        {
+            "name":"Remove Module",
+            "description":"Allow users to remove a module",
+            "slug":"backend_modules_modules_post_remove",
+            "value":false
+        }
+    ],
+    "required":[
+        {
+            "name": "settings",
+            "version": "1.0.0"
+        }
+    ],
+    "recommended": [],
+    "menu": [
+        {
+            "main_menu" : "Modules",
+            "title"     : "Modules",
+            "url"       : "modules",
+            "class"     : "",
+            "li_class"  : "",
+            "children"  : []
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+{
+    "name": "Settings",
+    "slug": "settings",
+    "version": "1.0.0",
+    "core_version": "0.0.1",
+    "type": "library",
+    "description": "A core settings module",
+    "keywords": ["template","parser"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jefferson Costella",
+            "email": "jeff@localhost",
+            "role": "Lead Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": { "Lex": "lib/" }
+    },
+    "options": {
+            "handles": "settings",
+            "auto": true
+    },
+    "roles" : [
+        {
+            "name":"Access Settings Module",
+            "description":"Permit access to the modules settings form.",
+            "slug":"backend_settings_settings_get_index",
+            "value":false
+        },
+        {
+            "name":"Save Settings Action",
+            "description":"Allow users to save modules settings.",
+            "slug":"backend_settings_settings_put_update",
+            "value":false
+        },
+        {
+            "name":"Allow users to change backend language",
+            "description":"Allow users to change backend language",
+            "slug":"backend_settings_settings_put_set_language",
+            "value":false
+        },
+        {
+            "name":"View Application keywords page",
+            "description":"Allow users to view application available keywords",
+            "slug":"backend_settings_keywords_get_index",
+            "value":false
+        },
+        {
+            "name":"Update Application keywords",
+            "description":"Allow users to update application available keywords",
+            "slug":"backend_settings_keywords_put_update",
+            "value":false
+        }
+    ],
+    "required":[],
+    "recommended": [],
+    "is_core": true,
+    "menu": [
+        {
+            "main_menu" : "Settings",
+            "title"     : "Core Settings",
+            "url"       : "settings",
+            "class"     : "",
+            "li_class"  : "",
+            "children"  : []
+        }
+    ]
+}

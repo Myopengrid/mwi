@@ -1,0 +1,7 @@
+{
+    "name":"Base Frontend Theme",
+    "description":"Base frontend apllication theme.",
+    "version":"1.0",
+    "slug":"base_fte",
+    "layer":"frontend"
+}
