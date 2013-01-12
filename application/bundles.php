@@ -34,12 +34,8 @@
 */
 
 return array(
-    'settings' => array(
+    'install' => array(
         'auto'    => true,
-        'handles' => 'settings',
-    ),
-    'modules' => array(
-        'auto'    => true,
-        'handles' => 'modules',
+        'handles' => 'install',
     ),
 );

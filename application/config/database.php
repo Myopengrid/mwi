@@ -64,9 +64,9 @@ return array(
         'default' => array(
             'driver'   => 'mysql',
             'host'     => '127.0.0.1',
-            'database' => 'install_test',
-            'username' => 'installer',
-            'password' => 'installer',
+            'database' => 'installer',
+            'username' => 'root',
+            'password' => '',
             'charset'  => 'utf8',
             'prefix'   => 'mwi_',
             'port'     => '3306',
