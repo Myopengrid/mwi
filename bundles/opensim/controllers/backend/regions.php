@@ -6,15 +6,6 @@ class Opensim_Backend_Regions_Controller extends Admin_Controller {
     {
         parent::__construct();
 
-        $db_is_ready = Config::get('settings::core.passes_db_settings');
-
-        if( !(bool)$db_is_ready )
-        {
-            Session::flash('message_type', 'error');
-            Session::flash('message', Lang::line('opensim::lang.Your opensim database needs to be configured!')->get(ADM_LANG));
-            return Redirect::to(ADM_URI.'/opensim')->with($this->data);
-        }
-
         $this->data['bar'] = array(
             'title'       => Lang::line('opensim::lang.Opensim')->get(ADM_LANG),
             'url'         => URL::base().'/'.ADM_URI.'/opensim',
@@ -30,6 +21,15 @@ class Opensim_Backend_Regions_Controller extends Admin_Controller {
 
     public function get_index()
     {
+        $db_is_ready = Config::get('settings::core.passes_db_settings');
+
+        if( !(bool)$db_is_ready )
+        {
+            Session::flash('message_type', 'error');
+            Session::flash('message', Lang::line('opensim::lang.Your opensim database needs to be configured!')->get(ADM_LANG));
+            return Redirect::to(ADM_URI.'/opensim')->with($this->data);
+        }
+        
         $regions = DB::connection('opensim')->table('regions')
             ->left_join('UserAccounts', 'regions.owner_uuid', '=', 'UserAccounts.PrincipalID')
             ->paginate(Config::get('settings::core.records_per_page'));
