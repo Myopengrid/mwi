@@ -27,7 +27,6 @@ class Opensim_Backend_Opensim_Controller extends Admin_Controller {
         {
             Session::flash('message_type', 'error');
             Session::flash('message', Lang::line('opensim::lang.Your opensim database needs to be configured!')->get(ADM_LANG));
-            return Redirect::to(ADM_URI.'/opensim')->with($this->data);
         }
 
         $this->data['settings'] = Settings\Model\Setting::where_section('opensim_settings')->get();
