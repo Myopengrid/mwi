@@ -138,6 +138,24 @@ class Settings_Schema_Task {
             'order'       => '999', 
         );
         $site_maintenance = Settings\Model\Setting::create($site_maintenance);
+
+        $application_keywords = array(
+            'title'       => 'Application Keywords', 
+            'slug'        => 'application_keywords', 
+            'description' => 'Set the application keywords', 
+            'type'        => 'hidden', 
+            'default'     => 'World,Avatar,Virtual,Opensim,Grid', 
+            'value'       => 'World,Avatar,Virtual,Opensim,Grid', 
+            'options'     => '', 
+            'class'       => '', 
+            'section'     => '',
+            'validation'  => '', 
+            'is_gui'      => '1', 
+            'module_slug' => 'settings', 
+            'module_id'   => $module->id, 
+            'order'       => '999', 
+        );
+        $application_keywords = Settings\Model\Setting::create($application_keywords);
     }
 
     public function uninstall()

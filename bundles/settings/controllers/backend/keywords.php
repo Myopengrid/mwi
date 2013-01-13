@@ -26,7 +26,7 @@ class Settings_Backend_Keywords_Controller extends Admin_Controller {
         return $this->theme->render('settings::backend.keywords.index', $this->data);
     }
 
-    public function put_update($params)
+    public function put_update()
     {
         $keywords = Input::get('application_keywords');
         Settings\Config::set('settings::core.application_keywords', $keywords, true);
