@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="#">{{ Config::get('settings::core.site_name') }}</a>
+      <a class="brand" href="{{ URL::base() }}">{{ Config::get('settings::core.site_name') }}</a>
       <div class="nav-collapse collapse">
         @if(Auth::check())
         <p class="navbar-text pull-right">
