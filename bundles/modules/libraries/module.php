@@ -353,8 +353,10 @@ class Module {
     */
     public function has_dependencies()
     {
+        $m_slug = $this->slug;
         $all_modules_path = glob(path('bundle').'*', GLOB_ONLYDIR);
         $dependencies = array();
+        
         foreach ($all_modules_path as $module_path) 
         {
             $module_name = basename($module_path);
@@ -364,8 +366,8 @@ class Module {
             {
                 foreach ($module->required as $req) 
                 {
-                    $exist = array_first($req, function($k, $v){return $v == $this->slug;});
-                    if(isset($exist) and $this->slug !== $module->slug)
+                    $exist = array_first($req, function($k, $v) use ($m_slug) { return $v == $m_slug; });
+                    if(isset($exist) and $m_slug !== $module->slug)
                     {
                         if($module->enabled)
                         {
