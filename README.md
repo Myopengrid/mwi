@@ -4,12 +4,17 @@ Myopengrid Web Interface
 Mwi is a web interface and content management system for opensim.
 ## Installation
 
-Make sure to set full permissions on the Mwi storage folder
+Make sure to set full permissions on the Mwi storage directory
 
     chmod -R 777 storage
     
+Also set full permissions to `application.php` and `bundles.php` file
+
+    chmod 777 application/config/application.php
+    chmod 777 application/bundles.php
+    
 Upload the contents of the Mwi public directory to your webserver
-public directory in some host providers it's called public_html, 
+public directory. In some host providers it's called public_html, 
 httdocs, etc. All the other folders MUST be outside your server 
 public directory.
 
