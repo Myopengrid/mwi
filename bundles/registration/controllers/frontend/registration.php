@@ -4,6 +4,14 @@ class Registration_Frontend_Registration_Controller extends Public_Controller {
     
     public function get_index()
     {
+        $disable_signup = Config::get('settings::core.registration_disabled');
+        if($disable_signup == 'yes')
+        {
+            $this->data['message']      = __('registration::lang.Sign-up is temporarily disabled')->get(APP_LANG);
+            $this->data['message_type'] = 'info';
+            return Redirect::to('home')->with($this->data);
+        }
+        
         $this->data['meta_title'] = 'Sign Up';
         return $this->theme->render('registration::frontend.index', $this->data);
     }
