@@ -80,6 +80,13 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
         {
             if(Request::ajax())
             {
+                // temporary until
+                // fix/reload top bar
+                // to remove modules
+                // links if any
+                // partial view error (not found)
+                return 'success';
+
                 $data = array(
                     'flash_message'    => array(
                         'message_type' => 'success',
@@ -93,12 +100,6 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
                     ),
                 );
                 
-                // temporary until
-                // fix/reload top bar
-                // to remove modules
-                // links if any
-                return 'success';
-
                 return json_encode($data);
             }
 
@@ -132,6 +133,13 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
         {
             if(Request::ajax())
             {
+                // temporary until
+                // fix/reload top bar
+                // to remove modules
+                // links if any
+                // partial view error (not found)
+                return 'success';
+
                 $data = array(
                     'flash_message'    => array(
                         'message_type' => 'success',
@@ -145,12 +153,6 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
                     ),
                 );
 
-                // temporary until
-                // fix/reload top bar
-                // to remove modules
-                // links if any
-                return 'success';
-                
                 return json_encode($data);
             }
 
@@ -192,6 +194,13 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
         {
             if(Request::ajax())
             {
+                // temporary until
+                // fix/reload top bar
+                // to remove modules
+                // links if any
+                // partial view error (not found)
+                return 'success';
+
                 $data = array(
                     'flash_message'    => array(
                         'message_type' => 'success',
@@ -204,12 +213,6 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
                                             ->render(),
                     ),
                 );
-
-                // temporary until
-                // fix/reload top bar
-                // to remove modules
-                // links if any
-                return 'success';
 
                 return json_encode($data);
             }
@@ -243,6 +246,13 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
         {
             if(Request::ajax())
             {
+                // temporary until
+                // fix/reload top bar
+                // to remove modules
+                // links if any
+                // partial view error (not found)
+                return 'success';
+
                 $data = array(
                     'flash_message'    => array(
                         'message_type' => 'success',
@@ -255,12 +265,6 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
                                             ->render(),
                     ),
                 );
-
-                // temporary until
-                // fix/reload top bar
-                // to remove modules
-                // links if any
-                return 'success';
 
                 return json_encode($data);
             }
@@ -297,6 +301,13 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
         {
             if(Request::ajax())
             {
+                // temporary until
+                // fix/reload top bar
+                // to remove modules
+                // links if any
+                // partial view error (not found)
+                return 'success';
+
                 $data = array(
                     'flash_message'    => array(
                         'message_type' => 'success',
@@ -309,12 +320,6 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
                                             ->render(),
                     ),
                 );
-
-                // temporary until
-                // fix/reload top bar
-                // to remove modules
-                // links if any
-                return 'success';
 
                 return json_encode($data);
             }
