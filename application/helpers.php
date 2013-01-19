@@ -1,6 +1,17 @@
 <?php
 
 /**
+ * Get the file extension from a string
+ *
+ * @param  string  $file_name
+ * @return string
+ */
+function get_file_extension($file_name) 
+{
+  return substr(strrchr($file_name,'.'),1);
+}
+
+/**
  * Temporary until forms bundle be 
  * implemented
  */
