@@ -23,7 +23,17 @@ if(!isset($time_zone) or empty($time_zone))
 {
     $time_zone = 'America/Sao_Paulo';
 }
-date_default_timezone_set($time_zone); 
+date_default_timezone_set($time_zone);
+
+/*
+|--------------------------------------------------------------------------
+| Date Format
+|--------------------------------------------------------------------------
+|
+| Sets constant variable for application date format 
+|
+*/
+define("APP_DATE_FORMAT", Config::get('settings::core.settings_date_format'));
 
 /*
 |--------------------------------------------------------------------------
