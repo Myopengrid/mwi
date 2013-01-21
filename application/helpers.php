@@ -26,9 +26,22 @@ Form::macro('mwi_field', function($field)
 
         if (substr($field->options, 0, 5) == 'func:')
         {
-            if (is_callable($func = substr($field->options, 5)))
+            $method_string = substr($field->options, 5);
+            $method_parts = explode(',', $method_string);
+            $method = $method_parts['0'];
+            unset($method_parts['0']);
+
+            if (is_callable($method))
             {
-                $field->options = call_user_func($func);
+                if(count($method_parts) > 1)
+                {
+                    $params = implode(',', $method_parts);
+                    $field->options = call_user_func($method, $params);
+                }
+                else
+                {
+                    $field->options = call_user_func($method);
+                }
             }
         }
     }
