@@ -139,6 +139,24 @@ class Settings_Schema_Task {
         );
         $site_maintenance = Settings\Model\Setting::create($site_maintenance);
 
+        $settings_time_zone = array(
+            'title'       => 'Time Zone', 
+            'slug'        => 'settings_time_zone', 
+            'description' => 'Time zone to be used by the system', 
+            'type'        => 'select', 
+            'default'     => 'America/Sao_Paulo', 
+            'value'       => 'America/Sao_Paulo', 
+            'options'     => 'func:\settings\get_available_time_zones', 
+            'class'       => '', 
+            'section'     => '',
+            'validation'  => '', 
+            'is_gui'      => '1', 
+            'module_slug' => 'settings', 
+            'module_id'   => $module->id, 
+            'order'       => '999', 
+        );
+        $settings_time_zone = Settings\Model\Setting::create($settings_time_zone);
+
         $application_keywords = array(
             'title'       => 'Application Keywords', 
             'slug'        => 'application_keywords', 

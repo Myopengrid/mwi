@@ -12,6 +12,17 @@ Config::set('application.language', Config::get('settings::core.frontend_languag
 
 /*
 |--------------------------------------------------------------------------
+| Time Zone
+|--------------------------------------------------------------------------
+|
+| Sets application time zone
+|
+*/
+$time_zone = Config::get('settings::core.settings_time_zone');
+date_default_timezone_set($time_zone); 
+
+/*
+|--------------------------------------------------------------------------
 | Load Settings Module Helpers
 |--------------------------------------------------------------------------
 |
