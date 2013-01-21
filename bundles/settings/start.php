@@ -19,6 +19,10 @@ Config::set('application.language', Config::get('settings::core.frontend_languag
 |
 */
 $time_zone = Config::get('settings::core.settings_time_zone');
+if(!isset($time_zone) or empty($time_zone))
+{
+    $time_zone = 'America/Sao_Paulo';
+}
 date_default_timezone_set($time_zone); 
 
 /*
