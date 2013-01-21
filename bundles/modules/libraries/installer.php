@@ -5,6 +5,7 @@ use Laravel\Messages;
 use Laravel\Lang;
 use Laravel\Log;
 use Laravel\Config;
+use Laravel\File;
 
 class Installer
 {
@@ -199,6 +200,12 @@ class Installer
 
                     return false;
                 }
+
+                // 
+                // Publish module assets if any
+                //
+                static::publish($module->slug);
+
                 
                 return true;
             }
@@ -248,6 +255,7 @@ class Installer
 
                     // Remove from DB
                     $module->delete();
+
                     return true;
                 }
                 else
@@ -343,15 +351,35 @@ class Installer
 
     public static function remove($module_slug)
     {
-        // Remove bundle files
-        if(\File::rmdir(path('bundle').$module_slug) === null)
+        if(isset($module_slug) and !empty($module_slug))
         {
-            static::$errors->add('installer', 'Module ['.$module_slug.'] was successfully removed.');
-            return true;
+            // Remove bundle files
+            if(\File::rmdir(path('bundle').$module_slug) === null)
+            {
+                static::$errors->add('installer', 'Module ['.$module_slug.'] was successfully removed.');
+                //
+                // Remove published assets
+                // 
+                if(File::rmdir(path('public').'bundles'.DS.$module_slug) === null)
+                {
+                    static::$errors->add('installer', 'Module assets for module ['.$module_slug.'] were successfully removed.');
+                    return true;
+                }
+                else
+                {
+                    static::$errors->add('installer', 'Failed to remove assets for module ['.$module_slug.'].');
+                    return false;       
+                }
+            }
+            else
+            {
+                static::$errors->add('installer', 'Failed to remove module ['.$module_slug.'].');
+                return false;
+            }
         }
         else
         {
-            static::$errors->add('installer', 'Failed to remove module ['.$module_slug.'].');
+            static::$errors->add('installer', 'Failed to remove module, invalid module slug');
             return false;
         }
     }
@@ -438,6 +466,30 @@ class Installer
         catch (\Exception $e)
         {
             static::$errors->add('installer', $e->getMessage());
+            return false;
+        }
+    }
+
+    public static function publish($module_slug)
+    {
+        require path('sys').'cli/dependencies'.EXT;
+        
+        try
+        {
+            $module_assets_path = path('bundle').$module_slug.'/public/'; 
+            if(\File::exists($module_assets_path))
+            {
+                \Bundle::register($module_slug);
+                $publish_cmd = \Laravel\CLI\Command::run(array('bundle:publish', $module_slug));
+                \Bundle::disable($module_slug);
+                return true;
+            }
+            return true;
+        }
+        catch (\Exception $e)
+        {
+            Log::error($e->getMessage());
+            static::$errors->add('installer', 'Failed to publish assets for module ['.$module_slug.'].');
             return false;
         }
     }
