@@ -1,6 +1,6 @@
 <div class="row">
     <div class="span12">
-        <ul style="margin:30px;" class="thumbnails background">
+        <ul style="margin:50px;" class="thumbnails background">
 
             @if(Bundle::exists('pages'))
             <li class="thumb-image span2">
