@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{ $page_title }}</title>
+    <title>{{ $meta_title.' - '.$site_name }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="{{ $meta_description }}">
+    <meta name="keywords" content="{{ $meta_keywords }}">
 
     <!-- Le styles -->
     <link href="{{ URL::base() }}/themes/base_fte/assets/css/bootstrap.css" rel="stylesheet">

@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{ $page_title }}</title>
+    <title>{{ $meta_title.' - '.$site_name }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="{{ $meta_description }}">
+    <meta name="keywords" content="{{ $meta_keywords }}">
 
     <!-- Le styles -->
     <link href="{{ URL::base() }}/themes/base_fte/assets/css/bootstrap.css" rel="stylesheet">
@@ -54,6 +54,22 @@
         
         <div style="min-height:200px; margin-top:15px;" class="span9">
 
+          <div id="flash-message" class="flash-message">
+            @if (Session::has('message'))
+            <div class="alert alert-{{ Session::get('message_type') }} fade in">
+              <button data-dismiss="alert" class="close" type="button">×</button>
+              {{ Session::get('message') }}
+            </div>
+            @endif
+
+            @if( !empty($errors->messages) )
+            <div class="alert alert-error fade in">
+              <button data-dismiss="alert" class="close" type="button">×</button>
+              {{ $errors->first() }}
+            </div>
+            @endif
+          </div>
+          
           {{ $theme_content }}
 
         </div><!--/span-->
@@ -62,11 +78,11 @@
 
       <hr>
 
-      <footer>
+      <div>
 
         {{ themes\render_partial('footer') }}
         
-      </footer>
+      </div>
 
     </div><!--/.fluid-container-->
 
