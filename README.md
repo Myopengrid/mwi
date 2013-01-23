@@ -12,6 +12,12 @@ Also set full permissions to `application.php` and `bundles.php` file
 
     chmod 777 application/config/application.php
     chmod 777 application/bundles.php
+
+Also set full permissions to directories
+
+    chmod 777 public/themes
+    chmod 777 public/bundles
+    chmod 777 bundles
     
 Upload the contents of the Mwi public directory to your webserver
 public directory. In some host providers it's called public_html, 
