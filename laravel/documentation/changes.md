@@ -2,6 +2,8 @@
 
 ## Contents
 
+- [Laravel 3.2.13](#3.2.13)
+- [Upgrading From 3.2.12](#upgrade-3.2.13)
 - [Laravel 3.2.12](#3.2.12)
 - [Upgrading From 3.2.11](#upgrade-3.2.12)
 - [Laravel 3.2.11](#3.2.11)
@@ -48,6 +50,17 @@
 - [Upgrading From 3.1](#upgrade-3.1.1)
 - [Laravel 3.1](#3.1)
 - [Upgrading From 3.0](#upgrade-3.1)
+
+<a name="3.2.13"></a>
+## Laravel 3.2.13
+
+- Upgraded Symfony HttpFoundation to 2.1.6.
+- Various framework fixes.
+
+<a name="upgrade-3.2.13"></a>
+### Upgrading From 3.2.12
+
+- Replace the **laravel** folder.
 
 <a name="3.2.12"></a>
 ## Laravel 3.2.12
@@ -315,7 +328,7 @@ Add the following code above `Blade::sharpen()` in `application/start.php`..
 ## Laravel 3.1.4
 
 - Fixes Response header casing bug.
-- Fixes SQL "where in" (...) short-cut bug.
+- Fixes SQL "where in" (…) short-cut bug.
 
 <a name="upgrade-3.1.4"></a>
 ### Upgrading From 3.1.3

@@ -1,23 +1,3 @@
-<script>
-jQuery(function($){
-    var parents = 'form';
-    $(parents +' div.draggable-field').sortable({
-        handle: 'span.move-handle',
-        update: function() {
-            $(parents +' div.draggable-field div.control-group').removeClass('even');
-            $(parents +' div.draggable-field div.control-group:nth-child(even)').addClass('even');
-            order = new Array();
-            $(parents +' div.control-group').each(function(){
-                order.push( this.id );
-            });
-            order = order.join(',');
-
-            $.post(SITE_URL + ADM_URI + 'ajax_update_order', {csrf_token: "{{Session::token()}}", order: order , module: 'users' });
-        }
-    });
-});
-</script>
-
 <div style="margin-top:25px;" class="row">
     <div class="span12">
     {{ Form::open(ADM_URI.'/users/', 'POST', array('class' => 'form-horizontal', 'id' => 'create-user')) }}
@@ -35,7 +15,6 @@ jQuery(function($){
                     {{ Form::text('uuid', Input::old('uuid', $uuid)) }}
                     <span class="required-icon"></span>
                     <span class="help-inline">{{ $errors->has('uuid') ? $errors->first('uuid', '<small style="color:#dd3c10;">:message</small>') : '' }}</span>
-                    <span class="move-handle"></span>
                 </div>
             </div>
 
@@ -45,7 +24,6 @@ jQuery(function($){
                     {{ Form::text('username', Input::old('username', '')) }}
                     <span class="required-icon"></span>
                     <span class="help-inline">{{ $errors->has('username') ? $errors->first('username', '<small style="color:#dd3c10;">:message</small>') : '' }}</span>
-                    <span class="move-handle"></span>
                 </div>
             </div>
 
@@ -55,7 +33,6 @@ jQuery(function($){
                     {{ Form::text('avatar_first_name', Input::old('avatar_first_name', '')) }}
                     <span class="required-icon"></span>
                     <span class="help-inline">{{ $errors->has('avatar_first_name') ? $errors->first('avatar_first_name', '<small style="color:#dd3c10;">:message</small>') : '' }}</span>
-                    <span class="move-handle"></span>
                 </div>
             </div>
 
@@ -65,7 +42,6 @@ jQuery(function($){
                     {{ Form::text('avatar_last_name', Input::old('avatar_last_name', '')) }}
                     <span class="required-icon"></span>
                     <span class="help-inline">{{ $errors->has('avatar_last_name') ? $errors->first('avatar_last_name', '<small style="color:#dd3c10;">:message</small>') : '' }}</span>
-                    <span class="move-handle"></span>
                 </div>
             </div>
 
@@ -75,7 +51,6 @@ jQuery(function($){
                     {{ Form::text('email', Input::old('email', '')) }}
                     <span class="required-icon"></span>
                     <span class="help-inline">{{ $errors->has('email') ? $errors->first('email', '<small style="color:#dd3c10;">:message</small>') : '' }}</span>
-                    <span class="move-handle"></span>
                 </div>
             </div>
 
@@ -94,7 +69,6 @@ jQuery(function($){
                         @endforeach
                     </select>
                     <span class="help-inline">{{ $errors->has('group_id') ? $errors->first('group_id', '<small style="color:#dd3c10;">:message</small>') : '' }}</span>
-                    <span class="move-handle"></span>
                 </div>
             </div>
             @endif
@@ -109,7 +83,6 @@ jQuery(function($){
                         <option value="banned">{{ Lang::line('users::lang.Banned')->get(ADM_LANG) }}</option>
                     </select>
                     <span class="help-inline">{{ $errors->has('status') ? $errors->first('status', '<small style="color:#dd3c10;">:message</small>') : '' }}</span>
-                    <span class="move-handle"></span>
                 </div>
             </div>
 
@@ -119,7 +92,6 @@ jQuery(function($){
                     {{ Form::password('password') }}
                     <span class="required-icon"></span>
                     <span class="help-inline">{{ $errors->has('password') ? $errors->first('password', '<small style="color:#dd3c10;">:message</small>') : '' }}</span>
-                    <span class="move-handle"></span>
                 </div>
             </div>
         </div>

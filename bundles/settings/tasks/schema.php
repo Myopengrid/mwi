@@ -139,6 +139,43 @@ class Settings_Schema_Task {
         );
         $site_maintenance = Settings\Model\Setting::create($site_maintenance);
 
+        $settings_time_zone = array(
+            'title'       => 'Time Zone', 
+            'slug'        => 'settings_time_zone', 
+            'description' => 'Time zone to be used by the system', 
+            'type'        => 'select', 
+            'default'     => 'America/Sao_Paulo', 
+            'value'       => 'America/Sao_Paulo', 
+            'options'     => 'func:\settings\get_available_time_zones', 
+            'class'       => '', 
+            'section'     => '',
+            'validation'  => '', 
+            'is_gui'      => '1', 
+            'module_slug' => 'settings', 
+            'module_id'   => $module->id, 
+            'order'       => '999', 
+        );
+        
+        $settings_time_zone = Settings\Model\Setting::create($settings_time_zone);
+
+        $settings_date_format = array(
+            'title'       => 'Date Format', 
+            'slug'        => 'settings_date_format', 
+            'description' => 'How should dates be displayed across the website and administration area? Please refer to: <a href="http://php&#46;net/manual/en/function&#46;date&#46;php" target="_blank">date format</a> from PHP - OR - Using the format of <a href="http://php&#46;net/manual/en/function&#46;strftime&#46;php" target="_blank">strings formatted as date</a> from PHP&#46;', 
+            'type'        => 'text', 
+            'default'     => 'D d F h:i A', 
+            'value'       => 'D d F h:i A', 
+            'options'     => '', 
+            'class'       => '', 
+            'section'     => '',
+            'validation'  => '', 
+            'is_gui'      => '1', 
+            'module_slug' => 'settings', 
+            'module_id'   => $module->id, 
+            'order'       => '999', 
+        );
+        $settings_date_format = Settings\Model\Setting::create($settings_date_format);
+
         $application_keywords = array(
             'title'       => 'Application Keywords', 
             'slug'        => 'application_keywords', 

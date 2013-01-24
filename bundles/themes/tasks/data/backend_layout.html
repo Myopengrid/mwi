@@ -138,8 +138,8 @@
       <div style="padding:20px;">
 
         <p class="pull-left"><a style="margin-right:10px" href="#">Back to top</a></p>
-        <p class="pull-left">  Copyright © 2009 - 2012 MWI   
-          --     Rendered in 0.1223 sec. 
+        <p class="pull-left">Powered by <a href="http://myopengrid.com">Myopengrid MWI</a>   
+          -- Rendered in 0.1223 sec. 
           Using <?php  echo round(memory_get_usage(true)/1048576,2). ' MB'; ?>.
         </p>
         

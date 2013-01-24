@@ -12,6 +12,31 @@ Config::set('application.language', Config::get('settings::core.frontend_languag
 
 /*
 |--------------------------------------------------------------------------
+| Time Zone
+|--------------------------------------------------------------------------
+|
+| Sets application time zone
+|
+*/
+$time_zone = Config::get('settings::core.settings_time_zone');
+if(!isset($time_zone) or empty($time_zone))
+{
+    $time_zone = 'America/Sao_Paulo';
+}
+date_default_timezone_set($time_zone);
+
+/*
+|--------------------------------------------------------------------------
+| Date Format
+|--------------------------------------------------------------------------
+|
+| Sets constant variable for application date format 
+|
+*/
+define("APP_DATE_FORMAT", Config::get('settings::core.settings_date_format'));
+
+/*
+|--------------------------------------------------------------------------
 | Load Settings Module Helpers
 |--------------------------------------------------------------------------
 |
