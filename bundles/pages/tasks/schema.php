@@ -90,13 +90,22 @@ class Pages_Schema_Task {
         // REMOVE PAGES
         // 
         $home = Pages\Model\Page::where_slug('home')->first();
-        $home->delete();
+        if(isset($home) and !empty($home))
+        {
+            $home->delete();
+        }
 
         $not_found = Pages\Model\Page::where_slug('404')->first();
-        $not_found->delete();
+        if(isset($not_found) and !empty($not_found))
+        {
+            $not_found->delete();
+        }
 
         $about_us = Pages\Model\Page::where_slug('about-us')->first();
-        $about_us->delete();
+        if(isset($about_us) and !empty($about_us))
+        {
+            $about_us->delete();
+        }
     }
 
     public function __destruct()

@@ -132,10 +132,16 @@ class Themes_Schema_Task {
         // REMOVE THEME
         // 
         $bke = Themes\Model\Theme::where_slug('base_bke')->first();
-        $bke->delete();
+        if(isset($bke) and !empty($bke))
+        {
+            $bke->delete();
+        }
 
         $fte = Themes\Model\Theme::where_slug('base_fte')->first();
-        $fte->delete();
+        if(isset($fte) and !empty($fte))
+        {
+            $fte->delete();
+        }
 
         //
         // REMOVE THEME SETTINGS

@@ -143,13 +143,22 @@ class Navigation_Schema_Task {
         // REMOVE NAVIGATION GROUPS
         // 
         $header = Navigation\Model\Group::where_slug('header')->first();
-        $header->delete();
+        if(isset($header) and !empty($header))
+        {
+            $header->delete();
+        }
 
         $sidebar = Navigation\Model\Group::where_slug('sidebar')->first();
-        $sidebar->delete();
+        if(isset($sidebar) and !empty($sidebar))
+        {
+            $sidebar->delete();
+        }
 
         $footer = Navigation\Model\Group::where_slug('footer')->first();
-        $footer->delete();
+        if(isset($footer) and !empty($footer))
+        {
+            $footer->delete();
+        }
     }
 
     public function __destruct()
