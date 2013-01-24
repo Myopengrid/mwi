@@ -36,10 +36,16 @@ class Groups_Schema_Task {
         // REMOVE GROUPS
         // 
         $admin = Groups\Model\Group::where_slug('admin')->first();
-        $admin->delete();
+        if(isset($admin) and !empty($admin))
+        {
+            $admin->delete();
+        }
 
         $users = Groups\Model\Group::where_slug('users')->first();
-        $users->delete();
+        if(isset($users) and !empty($users))
+        {
+            $users->delete();
+        }
     }
 
     public function __destruct()
