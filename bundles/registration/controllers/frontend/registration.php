@@ -191,7 +191,8 @@ class Registration_Frontend_Registration_Controller extends Public_Controller {
 
     public function get_pwreset()
     {
-        return $this->theme->render('registration::frontend.pwreset');
+        $this->data['meta_title'] = 'Reset Password';
+        return $this->theme->render('registration::frontend.pwreset', $this->data);
     }
 
     public function post_pwreset()
