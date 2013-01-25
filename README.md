@@ -25,7 +25,7 @@ public directory. In some host providers it's called public_html,
 httdocs, etc. All the other folders MUST be outside your server 
 public directory.
 
-Change the setting `$paths['public']` to your server pulbic folder, on the
+Change the setting `$paths['public']` to your server pulbic directory, on the
 file `paths.php`.
 
 ```php
