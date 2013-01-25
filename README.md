@@ -8,12 +8,13 @@ Make sure to set full permissions on the Mwi storage directory
 
     chmod -R 777 storage
     
-Also set full permissions to `application.php` and `bundles.php` file
+Set full permissions to `application.php` and `bundles.php` file
 
     chmod 777 application/config/application.php
+    chmod 777 application/config/database.php
     chmod 777 application/bundles.php
 
-Also set full permissions to directories
+Set full permissions to directories
 
     chmod 777 public/themes
     chmod 777 public/bundles
