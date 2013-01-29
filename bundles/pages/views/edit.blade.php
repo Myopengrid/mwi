@@ -1,10 +1,10 @@
 <?php themes\add_asset('codemirror.js', 'codemirror', array(), 'footer') ?>
 
 <?php themes\add_asset('jquery.tagsinput.css', 'jquery', array(), 'header') ?>
-<?php themes\add_asset('page-edit.css', 'modules/pages', array(), 'header') ?>
+<?php themes\add_asset('page-edit.css', 'mod: pages/css', array(), 'header') ?>
 
 <?php themes\add_asset('jquery.tagsinput.js', 'jquery', array(), 'footer') ?>
-<?php themes\add_asset('form.js', 'modules/pages', array('scripts'), 'footer') ?>
+<?php themes\add_asset('form.js', 'mod: pages/js', array('scripts'), 'footer') ?>
 
 <?php themes\add_asset('ckeditor.js', 'ckeditor', array(), 'footer') ?>
 <?php themes\add_asset('jquery.js', 'ckeditor/adapters', array(), 'footer') ?>

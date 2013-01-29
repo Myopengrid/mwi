@@ -1,11 +1,11 @@
 
-<?php themes\add_asset('index.css', 'modules/pages') ?>
+<?php themes\add_asset('index.css', 'mod: pages/css') ?>
 
 <?php themes\add_asset('jquery.cooki.js', 'jquery', array('jquery'), 'footer') ?>
 <?php themes\add_asset('jquery.colorbox.js', 'jquery', array('jquery'), 'footer') ?>
 <?php themes\add_asset('jquery.ui.nestedSortable.js', 'jquery', array(), 'footer') ?>
 <?php themes\add_asset('jquery.stickyscroll.js', 'jquery', array(), 'footer') ?>
-<?php themes\add_asset('index.js', 'modules/pages', array('scripts'), 'footer') ?>
+<?php themes\add_asset('index.js', 'mod: pages/js', array('scripts'), 'footer') ?>
 
 <div class="row">
 <div class="span6">
