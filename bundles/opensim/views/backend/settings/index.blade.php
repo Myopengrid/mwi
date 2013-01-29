@@ -1,4 +1,4 @@
-<?php themes\add_asset('settings.js', 'modules/robust', array(), 'footer') ?>
+<?php themes\add_asset('settings.js', 'mod: robust/js', array(), 'footer') ?>
 <div class="row">
     <div style="margin-top:15px;" class="span12">
     {{ Form::open(URL::base().'/'.ADM_URI.'/opensim/settings', 'PUT', array('class' => 'form-horizontal')) }}
