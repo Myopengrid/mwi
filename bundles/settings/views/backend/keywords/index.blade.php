@@ -1,8 +1,8 @@
 <?php themes\add_asset('jquery-ui.css', 'jquery', array(), 'header') ?>
-<?php themes\add_asset('jquery.tagit.css', 'modules/settings', array(), 'header') ?>
-<?php themes\add_asset('tagit.ui-zendesk.css', 'modules/settings', array(), 'header') ?>
-<?php themes\add_asset('tag-it.js', 'modules/settings', array('scripts'), 'footer') ?>
-<?php themes\add_asset('keywords.js', 'modules/settings', array('scripts'), 'footer') ?>
+<?php themes\add_asset('jquery.tagit.css', 'mod: settings/css', array(), 'header') ?>
+<?php themes\add_asset('tagit.ui-zendesk.css', 'mod: settings/css', array(), 'header') ?>
+<?php themes\add_asset('tag-it.js', 'mod: settings/js', array('scripts'), 'footer') ?>
+<?php themes\add_asset('keywords.js', 'mod: settings/js', array('scripts'), 'footer') ?>
 <style>
 .controls ul {margin-left: 10px;}
 </style>

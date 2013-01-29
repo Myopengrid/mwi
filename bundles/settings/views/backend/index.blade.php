@@ -1,5 +1,5 @@
 
-<?php themes\add_asset('settings.js', 'modules/settings', array(), 'footer') ?>
+<?php themes\add_asset('settings.js', 'mod: settings/js', array('scripts'), 'footer') ?>
 
 <div class="row">
     <div style="margin-top:15px;" class="span12">
