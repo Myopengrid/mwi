@@ -711,6 +711,11 @@ class Installer {
             foreach ($core_modules as $module => $module_path)
             {
                 static::schema('install', $module);
+
+                // 
+                // Publish module assets if any
+                //
+                static::publish($module);
             }
         }
 
@@ -799,6 +804,30 @@ class Installer {
         catch (\Exception $e)
         {
             Log::error($e->getMessage());
+            return false;
+        }
+    }
+
+    public static function publish($module_slug)
+    {
+        require path('sys').'cli/dependencies'.EXT;
+        
+        try
+        {
+            $module_assets_path = path('bundle').$module_slug.'/public/'; 
+            if(\File::exists($module_assets_path))
+            {
+                \Bundle::register($module_slug);
+                $publish_cmd = \Laravel\CLI\Command::run(array('bundle:publish', $module_slug));
+                \Bundle::disable($module_slug);
+                return true;
+            }
+            return true;
+        }
+        catch (\Exception $e)
+        {
+            Log::error($e->getMessage());
+            Log::error('Failed to publish assets for module ['.$module_slug.'].');
             return false;
         }
     }
