@@ -34,7 +34,6 @@ class Install_Frontend_Install_Controller extends Base_Controller {
     public function __construct()
     {
         parent::__construct();
-        Asset::add('style', 'css/style.css')->bundle('install');
         Asset::add('jquery', 'js/jquery.js')->bundle('install');
         Asset::add('installer', 'js/installer.js')->bundle('install');
         $this->layout->title = 'Sagui - Myopengrid Web Interface Installer';

@@ -196,90 +196,111 @@
     
 })(jQuery);
 
+
+
 jQuery(document).ready(function($) {
 
-// Add that cool orange bkg to the input that has focus
-$('input, select').bind({
-    focusin: function() {
-        var wrapper = $(this).closest('.input');
-        $(wrapper).addClass('block-message pyro');
-    },
-    focusout: function() {
-        var wrapper = $(this).closest('.input');
-        $(wrapper).removeClass('block-message pyro');
-    }
-});
+    $('.step_2').hide();
+    $('#db_flash_message').hide();
 
-$('input[name=password]').bind('keyup focus', function() {
+    $('.flag').bind('click', function(e) {
 
-    $.post(base_url + 'ajax/confirm_database', {
-            server: $('input[name=hostname]').val(),
-            port: $('input[name=port]').val(),
+        e.preventDefault();
+
+        var lang = $(this).data('lang');
+
+        $.post(base_url + 'ajax/change_lang',
+            {
+                _method: 'post',
+                lang: lang
+            },
+            function(data) {
+
+                location.reload();
+            },
+            'json'
+        );
+        return false;
+    });
+
+    $('input.db_field').bind('focus','focusout', function() {
+
+        $.post(base_url + 'ajax/confirm_database', {
+            driver:   $('select[name=driver]').val(),
+            host:     $('input[name=host]').val(),
+            database: $('input[name=database]').val(),
             username: $('input[name=username]').val(),
-            password: $('input[name=password]').val()
-        }, function(data) {
-            if (data.success == 'true') {
-                 $('#confirm_db').html(data.message).removeClass('block-message error').addClass('block-message success');
-            } else {
-                $('#confirm_db').html(data.message).removeClass('block-message success').addClass('block-message error');
-            }
-        }, 'json'
-    );
+            password: $('input[name=password]').val(),
+            prefix:   $('input[name=prefix]').val(),
+            port:     $('input[name=port]').val(),
+            charset:  'utf8',
+            }, 
+            function(data) {
 
-});
+                if (data.success == 'true') {
 
-$('input[name=dbname]').bind('keyup focus', function() {
+                    $('#db_flash_message').html(data.message).removeClass('alert-error').addClass('alert-success').show();
+                    $('input#next_step').show();
+                } 
+                else {
+                    $('#db_flash_message').html(data.message).removeClass('alert-success').addClass('alert-error').show();
+                    $('input#next_step').hide();
+                }
+            }, 
+            'json'
+        );
+    });
 
-    $.post(base_url + 'ajax/database_exists', {
-            server: $('input[name=hostname]').val(),
-            port: $('input[name=port]').val(),
-            dbname: $('input[name=dbname]').val(),
-            username: $('input[name=username]').val(),
-            password: $('input[name=password]').val()
-        }, function(data) {
-            if (data.success == 'true') {
-                 $('#confirm_dbname').html(data.message).removeClass('block-message error').addClass('block-message success');
-            } else {
-                $('#confirm_dbname').html(data.message).removeClass('block-message success').addClass('block-message error');
-            }
-        }, 'json'
-    );
+    if ($('select[name=driver]').find("option:selected").val() == 'sqlite') {
 
-});
-
-$('select#http_server').change(function(){
-    if ($(this).val() == 'apache_w') {
-        $.post(base_url + 'ajax/check_rewrite', '', function(data) {
-            if (data !== 'enabled') {
-                alert(data);
-            }
-        });
+        $(".div.input, .host").slideUp();
+        $(".div.input, .username").slideUp();
+        $(".div.input, .password").slideUp();
+        $(".div.input, .port").slideUp();
     }
-});
-    
-// Tipsy
-$('.tooltip').tipsy({
-    gravity: $.fn.tipsy.autoNS,
-    fade: true,
-    html: true
-});
 
-$('.tooltip-s').tipsy({
-    gravity: 's',
-    fade: true,
-    html: true
-});
-
-$('.tooltip-e').tipsy({
-    gravity: 'e',
-    fade: true,
-    html: true
-});
-
-$('.tooltip-w').tipsy({
-    gravity: 'w',
-    fade: true,
-    html: true
-});
+    $('select[name=driver]').change(function(){
+        var selection = $(this).val();
+        $('input#next_step').hide();
+        $('#db_flash_message').hide();
+        if(selection == 'sqlite')
+        {
+            $(".div.input, .host").slideUp();
+            $(".div.input, .username").slideUp();
+            $(".div.input, .password").slideUp();
+            $(".div.input, .port").slideUp();
+        }
+        else
+        {
+            $(".div.input, .host").slideDown();
+            $(".div.input, .username").slideDown();
+            $(".div.input, .password").slideDown();
+            $(".div.input, .port").slideDown();
+        }
+    });
         
+    // Tipsy
+    $('.tooltip').tipsy({
+        gravity: $.fn.tipsy.autoNS,
+        fade: true,
+        html: true
+    });
+
+    $('.tooltip-s').tipsy({
+        gravity: 's',
+        fade: true,
+        html: true
+    });
+
+    $('.tooltip-e').tipsy({
+        gravity: 'e',
+        fade: true,
+        html: true
+    });
+
+    $('.tooltip-w').tipsy({
+        gravity: 'w',
+        fade: true,
+        html: true
+    });  
 });
