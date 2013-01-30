@@ -1,5 +1,5 @@
 <?php themes\add_asset('jquery.colorbox.js', 'jquery', array('jquery'), 'footer') ?>
-<?php themes\add_asset('filter.js', 'modules/users', array('plugins'), 'footer') ?>
+<?php themes\add_asset('filter.js', 'mod: users/js', array('plugins'), 'footer') ?>
 
 <div class="item">
     
