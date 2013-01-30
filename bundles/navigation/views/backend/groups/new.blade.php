@@ -1,7 +1,3 @@
-<?php themes\add_asset('jquery.tagsinput.css', 'jquery', array(), 'header') ?>
-<?php themes\add_asset('jquery.tagsinput.js', 'jquery', array(), 'footer') ?>
-<?php themes\add_asset('form.js', null, array('scripts'), 'footer') ?>
-
 <div class="row">
     <div class="span12">
         {{ Form::open(URL::base().'/'.ADM_URI.'/navigation/groups', 'POST', array('class' => 'form-horizontal')) }}

@@ -478,26 +478,36 @@ jQuery(function($) {
   // Whatches for user pressing tab for auto completion
   // on inputs named title
   $('input[name="title"]').live('keydown', function(e) { 
-      
-      var keyCode = e.keyCode || e.which; 
 
-      if (keyCode == 9) {
-        e.preventDefault(); 
-        mwi.generate_slug('input[name="title"]', 'input[name="slug"]');
-      } 
+    mwi.generate_slug('input[name="title"]', 'input[name="slug"]');
+    
+    var keyCode = e.keyCode || e.which; 
+
+    if (keyCode == 9) {
+      e.preventDefault(); 
+      mwi.generate_slug('input[name="title"]', 'input[name="slug"]');
+    } 
   });
 
+  // $('input[name="title"]').focusout(function() {
+  //   mwi.generate_slug('input[name="title"]', 'input[name="slug"]');
+  // });
+
   $('input[name="name"]').live('keydown', function(e) {     
-    var keyCode = e.keyCode || e.which; 
+    
+    mwi.generate_slug('input[name="name"]', 'input[name="slug"]');
+    
+    var keyCode = e.keyCode || e.which;
+    
     if (keyCode == 9) {
       e.preventDefault(); 
       mwi.generate_slug('input[name="name"]', 'input[name="slug"]');
     } 
   });
 
-  $('input[name="name"]').live('keydown', function(e) {
-    mwi.generate_slug('input[name="name"]', 'input[name="slug"]');
-  });
+  // $('input[name="name"]').focusout(function() {
+  //   mwi.generate_slug('input[name="name"]', 'input[name="slug"]');
+  // });
 
   // Create a clean slug from whatever garbage is in the title field
   mwi.generate_slug = function(input_form, output_form, space_character)
