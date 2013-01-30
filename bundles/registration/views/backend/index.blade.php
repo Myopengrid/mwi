@@ -1,4 +1,4 @@
-<?php themes\add_asset('registration.js', 'modules/registration', array(), 'footer') ?>
+<?php themes\add_asset('registration.js', 'mod: registration/js', array(), 'footer') ?>
 
 <div class="row">
     <div style="margin-top:15px;" class="span12">
