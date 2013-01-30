@@ -34,6 +34,6 @@ to
 $paths['public'] = 'your_server_public_directory';
 ```
 
-Visit your domain name to start the installation
+Visit your domain to start the installation
 
     http://yourdomain.com/install
