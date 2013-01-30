@@ -1,7 +1,7 @@
 <?php themes\add_asset('ckeditor.js', 'ckeditor', array(), 'footer') ?>
 <?php themes\add_asset('jquery.tagsinput.js', 'jquery', array(), 'footer') ?>
 <?php themes\add_asset('jquery.tagsinput.css', 'jquery', array(), 'footer') ?>
-<?php themes\add_asset('get_users.js', 'modules/email', array(), 'footer') ?>
+<?php themes\add_asset('get_users.js', 'mod: email/js', array(), 'footer') ?>
 <script>
 // Try to repopulate selected users
 // if this is a failed post

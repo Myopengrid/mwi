@@ -1,4 +1,4 @@
-<?php themes\add_asset('settings.js', 'modules/email', array(), 'footer') ?>
+<?php themes\add_asset('settings.js', 'mod: email/js', array(), 'footer') ?>
 
 <div class="row">
     <div class="span12">
