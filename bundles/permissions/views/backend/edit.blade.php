@@ -1,4 +1,4 @@
-<?php themes\add_asset('permissions.js', 'modules/permissions', array('plugins'), 'footer') ?>
+<?php themes\add_asset('permissions.js', 'mod: permissions/js', array('plugins'), 'footer') ?>
 <div class="row">
     <div class="span12">
     {{Form::open(ADM_URI.'/permissions/'. $group_id, 'PUT', array('class' => 'form-horizontal', 'id' => 'edit-permissions'));}}
