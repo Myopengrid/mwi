@@ -33,7 +33,6 @@ class Email_Backend_Email_Email_Controller extends Admin_Controller {
     {
         $rules = array(
             'mail_protocol' => 'required|mail_protocol',
-            'server_email'  => 'required|email',
         );
 
         $validation = Email\Validator::make(Input::all(), $rules)->speaks(ADM_LANG);
@@ -95,7 +94,30 @@ class Email_Backend_Email_Email_Controller extends Admin_Controller {
 
         if ($validation->passes())
         {
-            $email_address = Config::get('settings::core.server_email');
+            // Get email service type
+            $email_protocol = Config::get('settings::core.mail_protocol');
+
+            $email_address = '';
+
+            if(isset($email_protocol) and !empty($email_protocol))
+            {
+                switch ($email_protocol) {
+                    case 'mail':
+                    case 'sendmail':
+                        $email_address = Config::get('settings::core.server_email');
+                        break;
+                    case 'smtp':
+                        $email_address = Config::get('settings::core.mail_smtp_user');
+                        break;
+                    default:
+                        \Session::flash('message', __('email::lang.Your email protocol settings are invalid')->get(ADM_LANG));
+                        \Session::flash('message_type', 'error');
+                        return Redirect::to(ADM_URI.'/email/new');
+                        break;
+                }
+            }
+            
+            
 
             $email_type = $validation->attributes['email_type'] == 'html' ? true : false;
 
