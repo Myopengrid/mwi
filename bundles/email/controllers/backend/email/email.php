@@ -123,12 +123,23 @@ class Email_Backend_Email_Email_Controller extends Admin_Controller {
 
             $mailer = new Email\Message;
 
+            // new xblade to parse the email template
+            $xblade = new Xblade();
+            $xblade->scopeGlue(':');
+
+            // data to be passed to email template
+            
+            $data['url']['base']           = URL::base();
+            $data['settings']['site_name'] = Config::get('settings::core.site_name');
+
             foreach ($validation->attributes['email_list'] as $email) 
             {
+                $data['user'] = Users\Model\User::where_email($email)->first();
+                
                 $mailer::to($email)
                     ->from($email_address)
-                    ->subject($validation->attributes['subject'])
-                    ->body($validation->attributes['email_body'])
+                    ->subject($xblade->parse($validation->attributes['subject'], $data))
+                    ->body($xblade->parse($validation->attributes['email_body'], $data))
                     ->html($email_type)
                     ->send();
             }
