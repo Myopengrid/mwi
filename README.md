@@ -10,7 +10,7 @@ Set full permissions to files:
     chmod 777 application/config/database.php
     chmod 777 application/bundles.php
 
-Set full permissions to directories"
+Set full permissions to directories:
 
     chmod -R 777 storage
     chmod -R 777 bundles
