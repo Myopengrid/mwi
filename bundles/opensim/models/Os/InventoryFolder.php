@@ -209,7 +209,7 @@ class InventoryFolder extends Eloquent {
             $new_array[$inventory_folder->folderid] = $f;
         }
 
-        ff($this->buildTree($new_array, $items_array));
+        //ff($this->buildTree($new_array, $items_array));
     }
 
     public function buildTree(array &$elements, $items, $parentId = '00000000-0000-0000-0000-000000000000') 
