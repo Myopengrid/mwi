@@ -131,6 +131,9 @@ class Email_Backend_Email_Email_Controller extends Admin_Controller {
             
             $data['url']['base']           = URL::base();
             $data['settings']['site_name'] = Config::get('settings::core.site_name');
+            $data['request']['ip']         = Request::ip();
+            $data['request']['user_agent'] = implode(', ', Request::header('user-agent'));
+            $data['request']['languages']  = implode(', ', Request::languages());
 
             foreach ($validation->attributes['email_list'] as $email) 
             {

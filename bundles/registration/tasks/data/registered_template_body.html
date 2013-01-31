@@ -3,7 +3,7 @@
     <strong>Username: {{ user:username }}</strong><br />
     <strong>Avatar Name: {{ user:avatar_first_name }}  {{ user:avatar_last_name }}</strong><br />
     <strong>Email: {{ user:email }}</strong><br />
-    <strong>IP Address: {{ request_ip }}</strong><br />
-    <strong>Browser Agent: {{ request_user_agent }}</strong><br />
-    <strong>Browser Languages: {{ request_languages }}</strong>
+    <strong>IP Address: {{ request:ip }}</strong><br />
+    <strong>Browser Agent: {{ request:user_agent }}</strong><br />
+    <strong>Browser Languages: {{ request:languages }}</strong>
 <p>

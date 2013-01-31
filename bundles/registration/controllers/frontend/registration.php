@@ -119,6 +119,9 @@ class Registration_Frontend_Registration_Controller extends Public_Controller {
                 $data['activation_code']       = $activation_record->code;
                 $data['url']['base']           = URL::base();
                 $data['settings']['site_name'] = Config::get('settings::core.site_name');
+                $data['request']['ip']         = Request::ip();
+                $data['request']['user_agent'] = implode(', ', Request::header('user-agent'));
+                $data['request']['languages']  = implode(', ', Request::languages());
 
                 // get email template based on settings
                 $email_address = Config::get('settings::core.server_email');
@@ -238,6 +241,9 @@ class Registration_Frontend_Registration_Controller extends Public_Controller {
             $data['forgotten_password_code'] = $pwreset_record->code;
             $data['url']['base']             = URL::base();
             $data['settings']['site_name']   = Config::get('settings::core.site_name');
+            $data['request']['ip']           = Request::ip();
+            $data['request']['user_agent']   = implode(', ', Request::header('user-agent'));
+            $data['request']['languages']    = implode(', ', Request::languages());
 
             // get email template based on settings
             $email_address = Config::get('settings::core.server_email');

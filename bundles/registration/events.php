@@ -18,14 +18,13 @@ Event::listen('registration.user_signup', function($user)
         $xblade = new Xblade();
         $xblade->scopeGlue(':');
 
-        $request_data = Request::headers();
         // data to be passed to email template
         $data['user']                  = $user;
         $data['url']['base']           = URL::base();
         $data['settings']['site_name'] = Config::get('settings::core.site_name');
-        $data['request_ip']            = Request::ip();
-        $data['request_user_agent']    = $request_data['user-agent']['0'];
-        $data['request_languages']     = implode(', ', Request::languages());
+        $data['request']['ip']         = Request::ip();
+        $data['request']['user_agent'] = implode(', ', Request::header('user-agent'));
+        $data['request']['languages']  = implode(', ', Request::languages());
 
         // get email template based on settings
         $email_address = Config::get('settings::core.server_email');
