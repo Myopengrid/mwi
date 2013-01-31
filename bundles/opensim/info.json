@@ -19,9 +19,33 @@
     },
     "roles" : [
         {
-            "name":"Access OpenSim Module",
-            "description":"Permit access to the opensim module.",
-            "slug":"backend_robust_robust_get_index",
+            "name":"View Settings",
+            "description":"Permit access to settings for the opensim module.",
+            "slug":"backend_opensim_opensim_get_index",
+            "value":false
+        },
+        {
+            "name":"View Database Settings",
+            "description":"Permit access to database settings for the opensim module.",
+            "slug":"backend_opensim_settings_get_database",
+            "value":false
+        },
+        {
+            "name":"Update Settings",
+            "description":"Permit group to update settings for the opensim module.",
+            "slug":"backend_opensim_settings_put_update",
+            "value":false
+        },
+        {
+            "name":"View Regions List",
+            "description":"Permit access to the regions list.",
+            "slug":"backend_opensim_regions_get_index",
+            "value":false
+        },
+        {
+            "name":"Regions List Search Filters (Ajax)",
+            "description":"Permit access to the regions list using the ajax request. If group is granted access to regions list this uption should be enabled as well.",
+            "slug":" backend_opensim_regions_post_ajax",
             "value":false
         }
     ],

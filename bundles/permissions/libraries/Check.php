@@ -118,6 +118,12 @@ class Check {
             $role = $controller_parts['0'].'_'.$module.'_'.$controller_parts[count($controller_parts)-1].'_'.strtolower(self::$method).'_'.self::$action;
 
         }
+        
+        // Debug for permissions
+        if(\Config::get('error.detail'))
+        {
+            \Log::error(self::$user->avatar_first_name.' '. self::$user->avatar_last_name.' is trying to ' .$role. ' in the module ' . $module);
+        }
 
         $is_allowed = self::group_has_role($module, $role);
 
