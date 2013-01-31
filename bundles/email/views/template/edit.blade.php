@@ -4,6 +4,20 @@
 <?php themes\add_asset('mwi_ckeditor.js', 'ckeditor', array(), 'footer') ?>
 
 <div style="margin-top:30px;" class="row">
+    <div class="offset5 span4"> 
+        <a data-html="true" class="module-description-info" href="#" data-content="{{ __('email::lang.The default system variables available for your email template are:')->get(ADM_LANG) }}<br />
+            &#123;&#123; settings:site_name &#125;&#125;<br />
+            &#123;&#123; url:base &#125;&#125;<br />
+            &#123;&#123; user:username &#125;&#125;<br />
+            &#123;&#123; user:avatar_first_name &#125;&#125;<br />
+            &#123;&#123; user:avatar_last_name &#125;&#125;<br />
+            &#123;&#123; request:ip &#125;&#125;<br />
+            &#123;&#123; request:user_agent &#125;&#125;<br />
+            &#123;&#123; request:languages &#125;&#125;<br />" data-placement="bottom" rel="popover" data-original-title="Email Template Variables">
+            View Template Variables
+        </a>
+    </div>
+    
     <div class="span12">
         {{ Form::open(URL::base().'/'.ADM_URI.'/email/template/'.$template->id, 'PUT', array('class' => 'form-horizontal')) }}
         <div style="display:none">
