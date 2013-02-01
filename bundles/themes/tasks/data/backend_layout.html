@@ -52,11 +52,11 @@
     {{ "\n".Asset::container('page')->scripts() }}
 
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="/themes/base_bke/assets/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/themes/base_bke/assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/themes/base_bke/assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/themes/base_bke/assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="/themes/base_bke/assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="{{ URL::base() }}/themes/base_bke/assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ URL::base() }}/themes/base_bke/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ URL::base() }}/themes/base_bke/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ URL::base() }}/themes/base_bke/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="{{ URL::base() }}/themes/base_bke/assets/ico/apple-touch-icon-57-precomposed.png">
   </head>
 
   <body>
@@ -134,7 +134,7 @@
       </div>
 
       {{ $theme_content }}
-
+      
       <div style="padding:20px;">
 
         <p class="pull-left"><a style="margin-right:10px" href="#">Back to top</a></p>
