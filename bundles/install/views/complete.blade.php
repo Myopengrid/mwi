@@ -2,7 +2,7 @@
 
     <h3><strong>{{__('install::lang.Congratulations')->get(Session::get('adm_lang'))}}</strong>, {{ $avatar_first_name . ' ' . $avatar_last_name }}</h3>
 
-    <p>{{__('install::lang.Sagui is now installed and ready to go! Please log into the admin panel with the following details')->get(Session::get('adm_lang'))}}.</p>
+    <p>{{__('install::lang.Mwi is now installed and ready to go! Please log into the admin panel with the following details')->get(Session::get('adm_lang'))}}.</p>
 
     <div class="block-message">
         <p>

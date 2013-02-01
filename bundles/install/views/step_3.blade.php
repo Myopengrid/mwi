@@ -1,7 +1,7 @@
 <section>
     <h3> {{__('install::lang.Step 3 - Set Permissions')->get(Session::get('adm_lang')) }}</h3>
 
-    <p>{{__('install::lang.Before Sagui can be installed you need to make sure that certain files and folders are writeable, these files and folders are listed below; Make sure any subfolders have the correct permissions too !')->get(Session::get('adm_lang'))}}</p>
+    <p>{{__('install::lang.Before Mwi can be installed you need to make sure that certain files and folders are writeable, these files and folders are listed below; Make sure any subfolders have the correct permissions too !')->get(Session::get('adm_lang'))}}</p>
 
     <h3>{{__('install::lang.Folder Permissions')->get(Session::get('adm_lang'))}}</h3>
 

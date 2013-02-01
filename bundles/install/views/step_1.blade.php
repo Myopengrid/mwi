@@ -2,8 +2,8 @@
 <section class="title">
     <h3>{{ __('install::lang.Step 1 - Check Requirements')->get(Session::get('adm_lang')) }}</h3>
   
-    <p>{{ __('install::lang.Sagui is very easy to install and should only take a few minutes, but there are a few questions that may appear confusing if you do not have a technical background; If at any point you get stuck please ask your web hosting provider;')->get(Session::get('adm_lang')) }}</p>
-    <p>{{__('install::lang.The first step in the installation process is to check whether your server supports Sagui; Most servers should be able to run it without any trouble')->get(Session::get('adm_lang'))}}.</p>
+    <p>{{ __('install::lang.Mwi is very easy to install and should only take a few minutes, but there are a few questions that may appear confusing if you do not have a technical background; If at any point you get stuck please ask your web hosting provider;')->get(Session::get('adm_lang')) }}</p>
+    <p>{{__('install::lang.The first step in the installation process is to check whether your server supports Mwi; Most servers should be able to run it without any trouble')->get(Session::get('adm_lang'))}}.</p>
 
 </section>
 
@@ -104,13 +104,13 @@
    <h3>{{__('install::lang.Summary')->get(Session::get('adm_lang'))}}</h3>
   
     @if($requeriments_passed)
-    <p>{{__('install::lang.Your server meets all the requirements for Sagui to run properly, go to the next step by clicking the button below')->get(Session::get('adm_lang'))}}.</p>
+    <p>{{__('install::lang.Your server meets all the requirements for Mwi to run properly, go to the next step by clicking the button below')->get(Session::get('adm_lang'))}}.</p>
     <form action="{{URL::base()}}/index.php/install/step_1" id="install_frm" method="post" accept-charset="utf-8">
         <input type="hidden" value="step_1" name="installation_step">
         <input type="submit" class="btn btn-primary" value="{{__('install::lang.Step 2')->get(Session::get('adm_lang'))}}" id="next_step">
     </form>
     @else
-    <p>{{__('install::lang.Your server does not meets all the requirements for Sagui to run properly, please review the list and fix the items in red that failed')->get(Session::get('adm_lang'))}}.</p>
+    <p>{{__('install::lang.Your server does not meets all the requirements for Mwi to run properly, please review the list and fix the items in red that failed')->get(Session::get('adm_lang'))}}.</p>
     <a class="btn btn-warning" id="next_step" href="{{URL::base()}}/index.php/install/step_1" title="Proceed to the next step">{{__('install::lang.Try Again')->get(Session::get('adm_lang'))}}</a>
     @endif
 </section>

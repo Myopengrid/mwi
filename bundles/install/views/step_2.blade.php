@@ -1,7 +1,7 @@
 <section>
     <h3>{{__('install::lang.Step 2 - Configure Database')->get(Session::get('adm_lang'))}}</h3>
 
-    <p>{{__('install::lang.Sagui requires a database to store all of your content and settings, so the first thing we need to do is check if the database connection  and database version are ok; If you do not understand what you are being asked to enter please ask your web hosting provider or server administrator for the details')->get(Session::get('adm_lang'))}}</p>
+    <p>{{__('install::lang.Mwi requires a database to store all of your content and settings, so the first thing we need to do is check if the database connection  and database version are ok; If you do not understand what you are being asked to enter please ask your web hosting provider or server administrator for the details')->get(Session::get('adm_lang'))}}</p>
     <div class="span2"></div>
     <div class="span8">
         <form class="form-horizontal" action="{{URL::base()}}/index.php/install/step_2" id="install_frm" method="post" accept-charset="utf-8">
@@ -69,7 +69,7 @@
             <div class="control-group prefix {{ $errors->has('prefix') ? 'error' : ''; }}">
                 <label class="control-label" for="prefix">{{__('install::lang.Table Prefix')->get(Session::get('adm_lang'))}}</label>
                 <div class="controls">
-                    <input id="prefix" class="db_field" name="prefix" value="{{Input::old('prefix','sag_')}}" type="text">
+                    <input id="prefix" class="db_field" name="prefix" value="{{Input::old('prefix','mwi_')}}" type="text">
                     <span class="help-inline">{{ $errors->first('prefix') }}</span>
                 </div>
             </div>
