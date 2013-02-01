@@ -135,7 +135,7 @@
 
             <li>
                 <label for="class">{{ Lang::line('navigation::lang.Class')->get(ADM_LANG) }}</label>
-                <input type="text" name="class" value=""  />
+                <input type="text" name="class" value="{{$link->class}}"  />
             </li>
         </ul>
         
