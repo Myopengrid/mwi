@@ -1,0 +1,14 @@
+a.remove-image-btn {
+  display:none;
+  position:absolute;
+  bottom:10%;
+  left:60%;
+  float:left;
+}
+li.thumb-image:hover a.remove-image-btn {
+  display:block;
+}
+
+li.thumb-image, li.thumb-image img {
+  position:relative;
+}
