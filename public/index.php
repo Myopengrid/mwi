@@ -19,6 +19,11 @@ define('LARAVEL_START', microtime(true));
 $web = true;
 
 // --------------------------------------------------------------
+// Automatically get the public folder name
+// --------------------------------------------------------------
+$paths['public'] = basename(dirname(__FILE__));
+
+// --------------------------------------------------------------
 // Set the core Laravel path constants.
 // --------------------------------------------------------------
 require '../paths.php';
