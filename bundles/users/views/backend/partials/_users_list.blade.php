@@ -40,7 +40,7 @@
             <td class="collapse">{{ __('users::lang.'.$user->status)->get(ADM_LANG) }}</td>
             <td class="collapse">{{ $user->created_at }}</td>
             <td class="collapse actions">
-                <a class="btn edit btn-mini" href="{{ URL::base() }}/admin/users/{{ $user->id }}/edit"><i class="icon-edit"></i> {{ Lang::line('users::lang.Edit')->get(ADM_LANG) }}</a>
+                <a class="btn edit btn-mini" href="{{ URL::base().'/'.ADM_URI }}/users/{{ $user->id }}/edit"><i class="icon-edit"></i> {{ Lang::line('users::lang.Edit')->get(ADM_LANG) }}</a>
                 @if( !$user->is_core)
                 @if($user->id != Auth::user()->id)
                 <a data-module="users" data-verb="DELETE" data-title="{{ __('users::lang.Are you sure to destroy the user?', array('avatar_name' => Str::title($user->avatar_first_name) . ' ' . Str::title($user->avatar_last_name)))->get(ADM_LANG)}}" class="confirm btn btn-danger btn-mini delete" href="{{ URL::base().'/'.ADM_URI }}/users/{{ $user->id }}"><i class="icon-trash icon-white"></i> {{ Lang::line('users::lang.Delete')->get(ADM_LANG) }}</a>
