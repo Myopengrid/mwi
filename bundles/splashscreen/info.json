@@ -1,0 +1,119 @@
+{
+    "name": "Opensim Splash Screen",
+    "slug": "splashscreen",
+    "version": "1.0.0",
+    "core_version": "1.0.0",
+    "type": "library",
+    "description": "Viewer welcome splash screen",
+    "keywords": ["viewer","splash","screen"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jefferson Costella",
+            "email": "jeff@localhost",
+            "role": "Lead Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "options": {
+            "handles": "splashscreen",
+            "auto": true
+    },
+    "roles" : [
+        {
+            "name":"Access Settings of Splash Screen Module",
+            "description":"Permit access to the splash screen module.",
+            "slug":"backend_splashscreen_splashscreen_get_index",
+            "value":false
+        },
+        {
+            "name":"Splash Screen Settings Update Action",
+            "description":"Permit access to the splash screen module.",
+            "slug":"backend_splashscreen_splashscreen_put_update",
+            "value":false
+        },
+        {
+            "name":"View Logo and Backgrounds",
+            "description":"Permit access to logo and background configurations.",
+            "slug":"backend_splashscreen_imagesbackgrounds_get_index",
+            "value":false
+        },
+        {
+            "name":"Logo and Backgrounds Upload Action",
+            "description":"Permit upload a background image.",
+            "slug":"backend_splashscreen_imagesbackgrounds_post_create",
+            "value":false
+        },
+        {
+            "name":"Logo and Backgrounds Delete Action",
+            "description":"Permit delete action to a background image.",
+            "slug":"backend_splashscreen_imagesbackgrounds_delete_destroy",
+            "value":false
+        },
+        {
+            "name":"View Flash News",
+            "description":"Permit access to flash news page.",
+            "slug":"backend_splashscreen_flashnews_get_index",
+            "value":false
+        },
+        {
+            "name":"View Flash News Create Form",
+            "description":"Permit access to flash news page create form.",
+            "slug":"backend_splashscreen_flashnews_get_new",
+            "value":false
+        },
+        {
+            "name":"Flash News Create Action",
+            "description":"Permit create new flash news action.",
+            "slug":"backend_splashscreen_flashnews_post_create",
+            "value":false
+        },
+        {
+            "name":"View Flash News Edit Form",
+            "description":"Permit access to flash news edit form.",
+            "slug":"backend_splashscreen_flashnews_get_edit",
+            "value":false
+        },
+        {
+            "name":"Flash News Edit Action",
+            "description":"Permit edit action to a flash news.",
+            "slug":"backend_splashscreen_flashnews_put_update",
+            "value":false
+        },
+        {
+            "name":"Flash News Delete Action",
+            "description":"Permit delete action to a flash news.",
+            "slug":"backend_splashscreen_flashnews_delete_destroy",
+            "value":false
+        },
+        {
+            "name":"Flash News Delete Action",
+            "description":"Permit delete action to a flash news.",
+            "slug":"backend_splashscreen_flashnews_delete_destroy",
+            "value":false
+        }
+    ],
+    "required":[
+        {
+            "name": "settings",
+            "version": "1.0.0"
+        },
+        {
+            "name": "opensim",
+            "version": "1.0.0"
+        }
+    ],
+    "recommended": [],
+    "menu": [
+        {
+            "main_menu" : "Modules",
+            "title"     : "Splash Screen",
+            "url"       : "splashscreen",
+            "class"     : "",
+            "li_class"  : "",
+            "children"  : []
+        }
+    ]
+}
