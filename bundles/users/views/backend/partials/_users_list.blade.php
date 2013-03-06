@@ -30,7 +30,7 @@
         <tr id="{{ $user->id }}">
             <td class="align-center"><input type="checkbox" value="{{ $user->id }}" name="action_to[]"></td>
             <td>
-                <a class="modal-large cboxElement" target="_blank" href="{{ URL::base() }}/admin/users/preview/1">
+                <a class="modal-large cboxElement" target="_blank" href="{{ URL::base().'/'.ADM_URI }}/users/preview/1">
                 {{ Str::title($user->avatar_first_name) . ' ' . Str::title($user->avatar_last_name) }}</a>
             </td>
             <td class="collapse"><a href="mailto:<?php echo $user->useremail ?>">{{ $user->email }}</a></td>

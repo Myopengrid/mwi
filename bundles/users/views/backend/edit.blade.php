@@ -116,7 +116,7 @@
                 <span>{{ Lang::line('users::lang.Save')->get(ADM_LANG) }}</span>
             </button>
 
-            <a href="{{ URL::base() }}/admin/users" class="btn">{{ Lang::line('users::lang.Cancel')->get(ADM_LANG) }}</a> 
+            <a href="{{ URL::base().'/'.ADM_URI }}/users" class="btn">{{ Lang::line('users::lang.Cancel')->get(ADM_LANG) }}</a> 
         </div>
 
     {{ Form::close() }}
