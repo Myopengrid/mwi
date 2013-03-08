@@ -118,23 +118,35 @@ class Opensim_Backend_Settings_Controller extends Admin_Controller {
             // and return our view with the 
             // error message
             $db->connect($credentials);
+            
+            // Set database flag
+            Settings\Config::set('settings::core.passes_db_settings', 1, true);
         }
-
-        \Settings\Config::set('settings::core.passes_db_settings', 1, true);
-
-        foreach ($settings as $slug => $value)
+        else
         {
-            // Update database configurations
-            if( !empty($value) )
+            $db_is_ready = Config::get('settings::core.passes_db_settings');
+
+            if((bool)$db_is_ready)
             {
-                $affected = Settings\Model\Setting::where_slug($slug)->where_module_slug('opensim')
-                                                    ->update(array('value' => $value));
+                foreach ($settings as $slug => $value)
+                {
+                    // Update database configurations
+                    if( !empty($value) )
+                    {
+                        $affected = Settings\Model\Setting::where_slug($slug)->where_module_slug('opensim')
+                                                            ->update(array('value' => $value));
+                    }
+                }
+                $this->data['message'] = Lang::line('opensim::lang.Opensim settings were successfully updated')->get(ADM_LANG);
+                $this->data['message_type'] = 'success';
+                return Redirect::back()->with($this->data);
+            }
+            else
+            {
+                Session::flash('message_type', 'error');
+                Session::flash('message', Lang::line('opensim::lang.Your opensim database needs to be configured!')->get(ADM_LANG));
+                return Redirect::back()->with($this->data);
             }
         }
-
-        $this->data['message'] = Lang::line('opensim::lang.Opensim settings were successfully updated')->get(ADM_LANG);
-        $this->data['message_type'] = 'success';
-        return Redirect::back()->with($this->data);
-
     }
 }
