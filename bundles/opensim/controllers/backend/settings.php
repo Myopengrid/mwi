@@ -145,7 +145,7 @@ class Opensim_Backend_Settings_Controller extends Admin_Controller {
                 foreach ($settings as $slug => $value)
                 {
                     // Update database configurations
-                    if( !empty($value) )
+                    if( strlen($value) > 0 )
                     {
                         $affected = Settings\Model\Setting::where_slug($slug)->where_module_slug('opensim')
                                                             ->update(array('value' => $value));

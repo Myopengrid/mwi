@@ -195,11 +195,11 @@ class Opensim_Schema_Task {
         $opensim_remove_old_regions = array(
             'title'       => 'Remove Old Regions', 
             'slug'        => 'opensim_remove_old_regions', 
-            'description' => 'Remove regions last seen with more days then specified, set to zero to disable&#46;', 
+            'description' => 'Remove regions last seen with more days then specified&#46;', 
             'type'        => 'select', 
             'default'     => '0', 
             'value'       => '0', 
-            'options'     => '{"0":"No","1":"1 Day","7":"7 Days","15":"15 Days","30":"30 Days"}', 
+            'options'     => '{"0":"Disabled","1":"1 Day","7":"7 Days","15":"15 Days","30":"30 Days"}', 
             'section'     => 'opensim_settings', 
             'validation'  => '', 
             'class'       => '', 
