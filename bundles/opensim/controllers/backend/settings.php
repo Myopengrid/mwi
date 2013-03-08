@@ -121,6 +121,10 @@ class Opensim_Backend_Settings_Controller extends Admin_Controller {
             
             // Set database flag
             Settings\Config::set('settings::core.passes_db_settings', 1, true);
+
+            $this->data['message'] = Lang::line('opensim::lang.Opensim settings were successfully updated')->get(ADM_LANG);
+            $this->data['message_type'] = 'success';
+            return Redirect::back()->with($this->data);
         }
         else
         {
