@@ -13,7 +13,7 @@
         <?php $class = true ?>
         @foreach($news as $the_news)
         <div style="padding:2px; background-color:{{ (($class = !$class) ? '#000' : '#151515' ) }}">
-          <a href="{{ $news_handler.$the_news->slug }}" target="_blank">{{ Str::title($the_news->title) }}</a>
+          <a href="{{ $news_handler.$the_news->slug }}" target="{{ Config::get('settings::core.splashscreen_flash_news_link') }}">{{ Str::title($the_news->title) }}</a>
           <span style="float:right">{{ date(APP_DATE_FORMAT, strtotime($the_news->created_at)) }}</span>
         </div>
         @endforeach

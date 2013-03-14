@@ -90,6 +90,24 @@ class Splashscreen_Schema_Task {
         );
         $splashscreen_flash_news_handler = Settings\Model\Setting::create($splashscreen_flash_news_handler);
 
+        $splashscreen_flash_news_link = array(
+            'title'       => 'Flash News Link Target', 
+            'slug'        => 'splashscreen_flash_news_link', 
+            'description' => 'Set the target of the flash news link', 
+            'type'        => 'select', 
+            'default'     => '_self', 
+            'value'       => '_self', 
+            'options'     => '{"_self":"Same Window","_blank":"New Window"}', 
+            'class'       => 'settings', 
+            'section'     => 'settings',
+            'validation'  => '', 
+            'is_gui'      => '1', 
+            'module_slug' => 'splashscreen', 
+            'module_id'   => $module->id, 
+            'order'       => '999', 
+        );
+        $splashscreen_flash_news_link = Settings\Model\Setting::create($splashscreen_flash_news_link);
+
         $splashscreen_effect = array(
             'title'       => 'Splash Screen Effect', 
             'slug'        => 'splashscreen_effect', 
