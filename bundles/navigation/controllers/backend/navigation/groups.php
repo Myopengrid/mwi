@@ -57,7 +57,7 @@ class Navigation_Backend_Navigation_Groups_Controller extends Admin_Controller {
 
             $this->data['message']      = Lang::line('navigation::lang.Navigation Group was successfully created')->get(ADM_LANG);
             $this->data['message_type'] = 'success';
-            return Redirect::to(ADM_URI.DS.'navigation')->with($this->data);
+            return Redirect::to(ADM_URI.'/navigation')->with($this->data);
         }
         else
         {
@@ -90,7 +90,7 @@ class Navigation_Backend_Navigation_Groups_Controller extends Admin_Controller {
                     }
                     else
                     {
-                        return Redirect::to(ADM_URI.DS.'navigation')->with($this->data);
+                        return Redirect::to(ADM_URI.'/navigation')->with($this->data);
                     }
                 }
                 else
@@ -103,7 +103,7 @@ class Navigation_Backend_Navigation_Groups_Controller extends Admin_Controller {
                     }
                     else
                     {
-                        return Redirect::to(ADM_URI.DS.'navigation')->with($this->data);
+                        return Redirect::to(ADM_URI.'/navigation')->with($this->data);
                     }
                 }
             }
@@ -117,7 +117,7 @@ class Navigation_Backend_Navigation_Groups_Controller extends Admin_Controller {
                 }
                 else
                 {
-                    return Redirect::to(ADM_URI.DS.'navigation')->with($this->data);
+                    return Redirect::to(ADM_URI.'/navigation')->with($this->data);
                 }
             }
         }
@@ -131,7 +131,7 @@ class Navigation_Backend_Navigation_Groups_Controller extends Admin_Controller {
             }
             else
             {
-                return Redirect::to(ADM_URI.DS.'navigation')->with($this->data);
+                return Redirect::to(ADM_URI.'/navigation')->with($this->data);
             }
         }
     }
