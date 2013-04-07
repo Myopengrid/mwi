@@ -107,8 +107,8 @@ class Navigation_Backend_Navigation_Links_Controller extends Admin_Controller {
         }
 
         $rules = array(
-            'title'  => 'required|max:50',
-            'link_type' => 'required|link_type',
+            'title'         => 'required|max:50',
+            'link_type'     => 'required|link_type',
             'restricted_to' => 'required',
         );
 
@@ -278,20 +278,20 @@ class Navigation_Backend_Navigation_Links_Controller extends Admin_Controller {
 
                 $this->data['message'] = Lang::line('navigation::lang.Link was successfully deleted')->get(ADM_LANG);
                 $this->data['message_type'] = 'success';
-                return Redirect::to(ADM_URI.DS.'navigation')->with($this->data);
+                return Redirect::to(ADM_URI.'/navigation')->with($this->data);
             }
             else
             {
                 $this->data['message'] = Lang::line('Could not delete link The link was not found')->get(ADM_LANG);
                 $this->data['message_type'] = 'error';
-                return Redirect::to(ADM_URI.DS.'navigation')->with($this->data);
+                return Redirect::to(ADM_URI.'/navigation')->with($this->data);
             }
         }
         else
         {
             $this->data['message'] = Lang::line('Invalid link id')->get(ADM_LANG);
             $this->data['message_type'] = 'error';
-            return Redirect::to(ADM_URI.DS.'navigation')->with($this->data);
+            return Redirect::to(ADM_URI.'/navigation')->with($this->data);
         }
     }
 
