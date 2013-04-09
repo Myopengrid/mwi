@@ -25,7 +25,7 @@
                 <button type="submit" name="restore" title="{{ Lang::line('themes::module.Are you sure to restore this layout to the original? All your changes will be lost!')->get(ADM_LANG) }}" value="restore" class="confirm btn blue">
                     <span>{{ Lang::line('themes::lang.I Messed Up!')->get(ADM_LANG) }}</span>
                 </button>                                  
-                <a href="{{ URL::base() .DS.ADM_URI.DS}}themes" class="btn gray cancel">{{ Lang::line('themes::lang.Cancel')->get(ADM_LANG) }}</a>
+                <a href="{{ URL::base() .'/'.ADM_URI.'/'}}themes" class="btn gray cancel">{{ Lang::line('themes::lang.Cancel')->get(ADM_LANG) }}</a>
                 <button type="submit" name="save" value="save" class="btn btn-primary">
                     <span>{{ Lang::line('themes::lang.Save')->get(ADM_LANG) }}</span>
                 </button>

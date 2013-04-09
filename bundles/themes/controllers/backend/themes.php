@@ -7,14 +7,14 @@ class Themes_Backend_Themes_Controller extends Admin_Controller {
         parent::__construct();
         $this->data['bar'] = array(
             'title'       => __('themes::lang.Themes')->get(ADM_LANG),
-            'url'         => URL::base() . DS.ADM_URI.DS.'themes',
+            'url'         => URL::base() . '/'.ADM_URI.'/'.'themes',
             'description' => __('themes::lang.Allows admins and staff to switch themes, upload new themes, and manage theme options')->get(ADM_LANG),
         );
 
         $this->data['section_bar'] = array(
-            __('themes::lang.Frontend Themes')->get(ADM_LANG)      => URL::base().DS.ADM_URI.DS.'themes',
-            __('themes::lang.Backend Themes')->get(ADM_LANG)       => URL::base().DS.ADM_URI.DS.'themes/backend',
-            __('themes::lang.Not Installed Themes')->get(ADM_LANG) => URL::base().DS.ADM_URI.DS.'themes/not_installed',
+            __('themes::lang.Frontend Themes')->get(ADM_LANG)      => URL::base().'/'.ADM_URI.'/'.'themes',
+            __('themes::lang.Backend Themes')->get(ADM_LANG)       => URL::base().'/'.ADM_URI.'/'.'themes/backend',
+            __('themes::lang.Not Installed Themes')->get(ADM_LANG) => URL::base().'/'.ADM_URI.'/'.'themes/not_installed',
             __('themes::lang.Upload New Theme')->get(ADM_LANG)     => URL::base().'/'.ADM_URI.'/themes/upload',
         );
     }
@@ -302,10 +302,10 @@ class Themes_Backend_Themes_Controller extends Admin_Controller {
     {
         
         $this->data['section_bar'] = array(
-            __('themes::lang.Frontend Themes')->get(ADM_LANG)         => URL::base().DS.ADM_URI.DS.'themes',
-            __('themes::lang.Backend Themes')->get(ADM_LANG)          => URL::base().DS.ADM_URI.DS.'themes/backend',
-            __('themes::lang.Not Installed Themes')->get(ADM_LANG)    => URL::base().DS.ADM_URI.DS.'themes/not_installed',
-            __('themes::lang.Edit Layout')->get(ADM_LANG)             => URL::base().DS.ADM_URI.DS.'themes/edit_layout/'.$theme_id,
+            __('themes::lang.Frontend Themes')->get(ADM_LANG)         => URL::base().'/'.ADM_URI.'/'.'themes',
+            __('themes::lang.Backend Themes')->get(ADM_LANG)          => URL::base().'/'.ADM_URI.'/'.'themes/backend',
+            __('themes::lang.Not Installed Themes')->get(ADM_LANG)    => URL::base().'/'.ADM_URI.'/'.'themes/not_installed',
+            __('themes::lang.Edit Layout')->get(ADM_LANG)             => URL::base().'/'.ADM_URI.'/'.'themes/edit_layout/'.$theme_id,
         );
 
         $this->data['section_bar_active'] = __('themes::lang.Edit Layout')->get(ADM_LANG);
@@ -496,7 +496,7 @@ class Themes_Backend_Themes_Controller extends Admin_Controller {
                     // The user could upload a zipfile with more then
                     // one folder inside and it could overwrite other
                     // themes folder if they have the same folder name
-                    if(File::exists($themes_path.'/'.$folder_name))
+                    if(File::exists($themes_path.DS.$folder_name))
                     {
                         // if any folder inside zipfile is found
                         // return with error

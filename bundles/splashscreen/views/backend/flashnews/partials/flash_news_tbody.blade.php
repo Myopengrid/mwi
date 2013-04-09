@@ -28,8 +28,8 @@
                     <td>{{ date(APP_DATE_FORMAT, strtotime($the_news->created_at)) }}</td>
                     <td class="actions">
                         <div class="buttons buttons-small align-center">
-                            <a href="{{ URL::base().DS.ADM_URI }}/splashscreen/flash_news/{{ $the_news->id }}/edit" class="btn btn-mini edit"><i class="icon-edit"></i> {{ __('splashscreen::flashnews.Edit')->get(ADM_LANG) }}</a>
-                            <a href="{{ URL::base().DS.ADM_URI }}/splashscreen/flash_news/{{ $the_news->id }}" data-verb="DELETE" data-title="Are you sure to delete this news?" data-module="splashscreen/flash_news" class="confirm btn btn-mini btn-danger"><i class="icon-trash icon-white"></i> {{ __('splashscreen::flashnews.Delete')->get(ADM_LANG) }}</a>
+                            <a href="{{ URL::base().'/'.ADM_URI }}/splashscreen/flash_news/{{ $the_news->id }}/edit" class="btn btn-mini edit"><i class="icon-edit"></i> {{ __('splashscreen::flashnews.Edit')->get(ADM_LANG) }}</a>
+                            <a href="{{ URL::base().'/'.ADM_URI }}/splashscreen/flash_news/{{ $the_news->id }}" data-verb="DELETE" data-title="Are you sure to delete this news?" data-module="splashscreen/flash_news" class="confirm btn btn-mini btn-danger"><i class="icon-trash icon-white"></i> {{ __('splashscreen::flashnews.Delete')->get(ADM_LANG) }}</a>
                         </div>
                     </td>
                 </tr>

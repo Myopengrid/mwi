@@ -19,8 +19,8 @@
                 <td>{{ Lang::line('themes::lang.'.$theme['description'])->get(ADM_LANG) }}</td>
                 <td>{{ $theme['version'] }}</td>
                 <td class="actions">
-                    <a data-module="themes" data-verb="POST" data-title="{{ Lang::line('themes::lang.Are you sure you want install this theme?')->get(ADM_LANG)}}" class="btn btn-mini confirm" href="{{ URL::base().DS.ADM_URI.DS }}themes/install/{{ $theme['slug'] }}"><i class="icon-arrow-right"></i> {{ Lang::line('themes::lang.Install')->get(ADM_LANG) }}</a>
-                    <a data-module="themes" data-verb="DELETE" data-title="{{ Lang::line('themes::lang.Are you sure to delete the theme [:theme_name] ?', array('theme_name' => $theme['name']))->get(ADM_LANG) }}" class="confirm btn btn-mini btn-danger" href="{{ URL::base().DS.ADM_URI.DS }}themes/{{ $theme['slug'] }}"><i class="icon-trash icon-white"></i> {{ Lang::line('themes::lang.Delete')->get(ADM_LANG) }}</a>
+                    <a data-module="themes" data-verb="POST" data-title="{{ Lang::line('themes::lang.Are you sure you want install this theme?')->get(ADM_LANG)}}" class="btn btn-mini confirm" href="{{ URL::base().'/'.ADM_URI.'/' }}themes/install/{{ $theme['slug'] }}"><i class="icon-arrow-right"></i> {{ Lang::line('themes::lang.Install')->get(ADM_LANG) }}</a>
+                    <a data-module="themes" data-verb="DELETE" data-title="{{ Lang::line('themes::lang.Are you sure to delete the theme [:theme_name] ?', array('theme_name' => $theme['name']))->get(ADM_LANG) }}" class="confirm btn btn-mini btn-danger" href="{{ URL::base().'/'.ADM_URI.'/' }}themes/{{ $theme['slug'] }}"><i class="icon-trash icon-white"></i> {{ Lang::line('themes::lang.Delete')->get(ADM_LANG) }}</a>
                 </td>
             </tr>
             @endforeach

@@ -158,6 +158,6 @@ class Splashscreen_Backend_Imagesbackgrounds_Controller extends Admin_Controller
 
         $this->data['message_type'] = 'success';
         $this->data['message']      = ___('splashscreen::lang.Image was successfully removed')->get(ADM_LANG);
-        return Redirect::to(ADM_URI.DS.'splashscreen/images_backgrounds')->with($this->data);
+        return Redirect::to(ADM_URI.'/'.'splashscreen/images_backgrounds')->with($this->data);
     }
 }

@@ -16,12 +16,12 @@
             @foreach ($core_modules as $module)
             <tr>
                 @if($module->slug == 'admin')
-                    <td class="collapse"><a href="{{ URL::base().DS.ADM_URI }}">{{ $module->name }}</a></td>
+                    <td class="collapse"><a href="{{ URL::base().'/'.ADM_URI }}">{{ $module->name }}</a></td>
                 @else
                     <?php $bundle = Bundle::get($module->slug); ?>
                     <?php $handles = isset($bundle['handles']) ? 1 : 0; ?>
                     @if($module->installed and $module->enabled and $handles == 1)
-                    <td class="collapse"><a href="{{ URL::base().DS.ADM_URI.DS.$module->slug }}">{{ $module->name }}</a></td>
+                    <td class="collapse"><a href="{{ URL::base().'/'.ADM_URI.'/'.$module->slug }}">{{ $module->name }}</a></td>
                     @else
                     <td class="collapse">{{ $module->name }}</td>
                     @endif

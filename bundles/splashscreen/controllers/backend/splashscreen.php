@@ -8,7 +8,7 @@ class Splashscreen_Backend_Splashscreen_Controller extends Admin_Controller {
 
         $this->data['bar'] = array(
             'title'       => Lang::line('splashscreen::lang.Splash Screen')->get(ADM_LANG),
-            'url'         => URL::base() .DS.ADM_URI.'/splashscreen',
+            'url'         => URL::base() .'/'.ADM_URI.'/splashscreen',
             'description' => Lang::line('splashscreen::lang.Allows administrators to update settings for the viewer splash screen')->get(ADM_LANG),
             'buttons'     => array(),
         );
