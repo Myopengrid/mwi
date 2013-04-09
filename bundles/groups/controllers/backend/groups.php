@@ -55,7 +55,7 @@ class Groups_Backend_Groups_Controller extends Admin_Controller {
         {
             $this->data['message'] = __('groups::lang.Group [:group_name] cannot be edited', array('group_name' => $group->name))->get(ADM_LANG);
             $this->data['message_type'] = 'info';
-            return Redirect::to(ADM_URI.DS.'groups')->with($this->data);
+            return Redirect::to(ADM_URI.'/'.'groups')->with($this->data);
         }
         else
         {
@@ -185,7 +185,7 @@ class Groups_Backend_Groups_Controller extends Admin_Controller {
 
             Event::fire('mwi.group_created', array($group));
 
-            return Redirect::to(ADM_URI.DS.'groups')->with($this->data);
+            return Redirect::to(ADM_URI.'/'.'groups')->with($this->data);
         }
         else
         {

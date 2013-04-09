@@ -85,7 +85,7 @@
             <button type="submit" name="btnAction" value="save" class="btn btn-success">
                 <i class="icon-plus"></i> {{ Lang::line('navigation::lang.Create')->get(ADM_LANG) }}
             </button>                           
-            <a href="{{ URL::base().DS.ADM_URI.DS }}navigation" class="btn gray cancel">{{ Lang::line('navigation::lang.Cancel')->get(ADM_LANG) }}</a>
+            <a href="{{ URL::base().'/'.ADM_URI }}/navigation" class="btn gray cancel">{{ Lang::line('navigation::lang.Cancel')->get(ADM_LANG) }}</a>
         </div>
     {{ Form::close() }}
 </div>

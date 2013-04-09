@@ -4,7 +4,7 @@
 
             @if(Bundle::exists('pages'))
             <li class="thumb-image span2">
-            <a href="{{ URL::base().DS.ADM_URI.DS}}pages" class="thumbnail">
+            <a href="{{ URL::base().'/'.ADM_URI.'/'}}pages" class="thumbnail">
                 <i class="icon-book"></i> Pages 
             </a>
             </li>
@@ -12,7 +12,7 @@
 
             @if(Bundle::exists('users'))
             <li class="thumb-image span2">
-            <a href="{{ URL::base().DS.ADM_URI.DS}}users" class="thumbnail">
+            <a href="{{ URL::base().'/'.ADM_URI.'/'}}users" class="thumbnail">
                 <i class="icon-user"></i> Users
             </a>
             </li>
@@ -20,7 +20,7 @@
 
             @if(Bundle::exists('email'))
             <li class="thumb-image span2">
-            <a href="{{ URL::base().DS.ADM_URI.DS}}email/new" class="thumbnail">
+            <a href="{{ URL::base().'/'.ADM_URI.'/'}}email/new" class="thumbnail">
                 <i class="icon-envelope"></i> Email
             </a>
             </li>
@@ -28,7 +28,7 @@
 
             @if(Bundle::exists('opensim'))
             <li class="thumb-image span2">
-            <a href="{{ URL::base().DS.ADM_URI.DS}}opensim" class="thumbnail">
+            <a href="{{ URL::base().'/'.ADM_URI.'/'}}opensim" class="thumbnail">
                 <i class="icon-road"></i> Opensim
             </a>
             </li>
@@ -36,7 +36,7 @@
 
             @if(Bundle::exists('splashscreen'))
             <li class="thumb-image span2">
-            <a href="{{ URL::base().DS.ADM_URI.DS}}splashscreen" class="thumbnail">
+            <a href="{{ URL::base().'/'.ADM_URI.'/'}}splashscreen" class="thumbnail">
                 <i class="icon-tasks"></i> Splash Screen
             </a>
             </li>

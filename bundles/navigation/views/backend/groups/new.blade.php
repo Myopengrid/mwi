@@ -28,7 +28,7 @@
                 <span>{{ Lang::line('navigation::lang.Save')->get(ADM_LANG) }}</span>
             </button>
 
-            <a class="btn" href="{{URL::base().DS.ADM_URI}}/navigation">{{ Lang::line('navigation::lang.Cancel')->get(ADM_LANG) }}</a> 
+            <a class="btn" href="{{URL::base().'/'.ADM_URI}}/navigation">{{ Lang::line('navigation::lang.Cancel')->get(ADM_LANG) }}</a> 
         </div>
     {{ Form::close() }}  
     </div>  
