@@ -24,9 +24,9 @@
                     <td class="collapse">{{ $template->lang }}</td>
                     <td class="actions">
                         <div class="buttons buttons-small align-center">
-                            <!-- <a href="{{ URL::base().DS.ADM_URI }}/email/preview_template/{{ $template->id }}" class="btn btn-mini preview modal cboxElement">{{ __('email::lang.Preview')->get(ADM_LANG) }}</a> -->
-                            <a href="{{ URL::base().DS.ADM_URI }}/email/template/{{ $template->id }}/edit" class="btn btn-mini edit"><i class="icon-edit"></i> {{ __('email::lang.Edit')->get(ADM_LANG) }}</a>
-                            <a href="{{ URL::base().DS.ADM_URI }}/email/template/new/{{ $template->id }}" class="btn btn-mini clone"><i class="icon-tags"></i> {{ __('email::lang.Copy')->get(ADM_LANG) }}</a>
+                            <!-- <a href="{{ URL::base().'/'.ADM_URI }}/email/preview_template/{{ $template->id }}" class="btn btn-mini preview modal cboxElement">{{ __('email::lang.Preview')->get(ADM_LANG) }}</a> -->
+                            <a href="{{ URL::base().'/'.ADM_URI }}/email/template/{{ $template->id }}/edit" class="btn btn-mini edit"><i class="icon-edit"></i> {{ __('email::lang.Edit')->get(ADM_LANG) }}</a>
+                            <a href="{{ URL::base().'/'.ADM_URI }}/email/template/new/{{ $template->id }}" class="btn btn-mini clone"><i class="icon-tags"></i> {{ __('email::lang.Copy')->get(ADM_LANG) }}</a>
                         </div>
                     </td>
                 </tr>

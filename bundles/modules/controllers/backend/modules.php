@@ -8,14 +8,14 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
 
         $this->data['bar'] = array(
             'title'       => __('modules::lang.Modules')->get(ADM_LANG),
-            'url'         => URL::base().DS.ADM_URI.'/modules',
+            'url'         => URL::base().'/'.ADM_URI.'/modules',
             'description' => __('modules::lang.Allow admin to see a list of currently installed modules')->get(ADM_LANG),
         );
 
         $this->data['section_bar'] = array(
-            Lang::line('modules::lang.Modules')->get(ADM_LANG)           => URL::base().DS.ADM_URI.'/modules',
-            Lang::line('modules::lang.Core Modules')->get(ADM_LANG)      => URL::base().DS.ADM_URI.'/modules/core',
-            Lang::line('modules::lang.Upload New Module')->get(ADM_LANG) => URL::base().DS.ADM_URI.'/modules/upload',
+            Lang::line('modules::lang.Modules')->get(ADM_LANG)           => URL::base().'/'.ADM_URI.'/modules',
+            Lang::line('modules::lang.Core Modules')->get(ADM_LANG)      => URL::base().'/'.ADM_URI.'/modules/core',
+            Lang::line('modules::lang.Upload New Module')->get(ADM_LANG) => URL::base().'/'.ADM_URI.'/modules/upload',
         );
     }
 
@@ -60,16 +60,16 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
             {
                 $this->data['message_type'] = 'success';
                 $this->data['message'] = __('modules::lang.Module was successfully uploaded')->get(ADM_LANG);
-                return Redirect::to(ADM_URI.DS.'modules')->with($this->data);
+                return Redirect::to(ADM_URI.'/'.'modules')->with($this->data);
             }
             else
             {
-                return Redirect::to(ADM_URI.DS.'modules/upload')->with($this->data)->with_errors($installer::$errors);
+                return Redirect::to(ADM_URI.'/'.'modules/upload')->with($this->data)->with_errors($installer::$errors);
             }
         }
         else
         {
-            return Redirect::to(ADM_URI.DS.'modules/upload')->with($this->data)->with_errors($validation->errors);
+            return Redirect::to(ADM_URI.'/'.'modules/upload')->with($this->data)->with_errors($validation->errors);
         }
     }
 
@@ -105,7 +105,7 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
 
             $this->data['message_type'] = 'success';
             $this->data['message'] = __('modules::lang.Module was successfully installed')->get(ADM_LANG);
-            return Redirect::to(ADM_URI.DS.'modules')->with($this->data);
+            return Redirect::to(ADM_URI.'/'.'modules')->with($this->data);
         }
         else
         {
@@ -122,7 +122,7 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
             
             $this->data['message_type'] = 'error';
             $this->data['message'] = $installer::$errors->first();
-            return Redirect::to(ADM_URI.DS.'modules')->with($this->data)->with_errors($installer::$errors);
+            return Redirect::to(ADM_URI.'/'.'modules')->with($this->data)->with_errors($installer::$errors);
         }
     }
 
@@ -158,7 +158,7 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
 
             $this->data['message_type'] = 'success';
             $this->data['message'] = __('modules::lang.Module was successfully enabled')->get(ADM_LANG);
-            return Redirect::to(ADM_URI.DS.'modules')->with($this->data);
+            return Redirect::to(ADM_URI.'/'.'modules')->with($this->data);
         }
         else
         {
@@ -183,7 +183,7 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
 
             $this->data['message_type'] = 'error';
             $this->data['message'] = $installer::$errors->first();
-            return Redirect::to(ADM_URI.DS.'modules')->with($this->data)->with_errors($installer::$errors);
+            return Redirect::to(ADM_URI.'/'.'modules')->with($this->data)->with_errors($installer::$errors);
         }
     }
 
@@ -219,7 +219,7 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
 
             $this->data['message_type'] = 'success';
             $this->data['message']      = __('modules::lang.Module was successfully disabled')->get(ADM_LANG);
-            return Redirect::to(ADM_URI.DS.'modules')->with($this->data);
+            return Redirect::to(ADM_URI.'/'.'modules')->with($this->data);
         }
         else
         {
@@ -234,7 +234,7 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
             }
             $this->data['message_type'] = 'error';
             $this->data['message']      = $installer::$errors->first();
-            return Redirect::to(ADM_URI.DS.'modules')->with($this->data);
+            return Redirect::to(ADM_URI.'/'.'modules')->with($this->data);
         }
     }
 
@@ -271,7 +271,7 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
 
             $this->data['message_type'] = 'success';
             $this->data['message']      = __('modules::lang.Module ":module_slug" was successfully deleted', $module_slug)->get(ADM_LANG);
-            return Redirect::to(ADM_URI.DS.'modules')->with($this->data);
+            return Redirect::to(ADM_URI.'/'.'modules')->with($this->data);
         }
         else
         {
@@ -289,7 +289,7 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
 
             $this->data['message_type'] = 'error';
             $this->data['message']      = $installer::$errors->first();
-            return Redirect::to(ADM_URI.DS.'modules')->with($this->data);
+            return Redirect::to(ADM_URI.'/'.'modules')->with($this->data);
         }
     }
 
@@ -326,7 +326,7 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
 
             $this->data['message_type'] = 'success';
             $this->data['message']      = __('modules::lang.Module ":module_slug" was successfully uninstalled', $module_slug)->get(ADM_LANG);
-            return Redirect::to(ADM_URI.DS.'modules')->with($this->data);
+            return Redirect::to(ADM_URI.'/'.'modules')->with($this->data);
         }
         else
         {
@@ -343,7 +343,7 @@ class Modules_Backend_Modules_Controller extends Admin_Controller {
 
             $this->data['message_type'] = 'error';
             $this->data['message']      = $installer::$errors->first();
-            return Redirect::to(ADM_URI.DS.'modules')->with($this->data);
+            return Redirect::to(ADM_URI.'/'.'modules')->with($this->data);
         }
     }
 }

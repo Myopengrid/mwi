@@ -43,7 +43,7 @@
                 @if(is_null($link->page))
                     Page was deleted
                 @else
-                    <a class="cboxElement" rel="modal-large" target="_blank" href="{{URL::base().DS.$link->page->slug}}"> {{URL::base().DS.$link->page->slug}}</a>
+                    <a class="cboxElement" rel="modal-large" target="_blank" href="{{URL::base().'/'.$link->page->slug}}"> {{URL::base().'/'.$link->page->slug}}</a>
                 @endif
             @endif
 
@@ -51,10 +51,10 @@
             <a class="cboxElement" rel="modal-large" target="_blank" href="{{$link->url}}"> {{$link->url}}</a>
             @endif
             @if($link->link_type == 'uri')
-            <a class="cboxElement" rel="modal-large" target="_blank" href="{{URL::base().DS.$link->uri}}"> {{URL::base().DS.$link->uri}}</a>
+            <a class="cboxElement" rel="modal-large" target="_blank" href="{{URL::base().'/'.$link->uri}}"> {{URL::base().'/'.$link->uri}}</a>
             @endif
             @if($link->link_type == 'module')
-            <a class="cboxElement" rel="modal-large" target="_blank" href="{{URL::base().DS.$link->module_name}}"> {{URL::base().DS.$link->module_name}}</a>
+            <a class="cboxElement" rel="modal-large" target="_blank" href="{{URL::base().'/'.$link->module_name}}"> {{URL::base().'/'.$link->module_name}}</a>
             @endif
         </p>
         
@@ -65,8 +65,8 @@
     </fieldset> 
 
         <div class="btn-group" style="margin-left:25px; margin-bottom:25px;">
-            <a href="{{URL::base().DS.ADM_URI.DS}}navigation/links/{{$link->id}}/edit" rel="{{$link->group_id}}" type="button" class="btn ajax"><i class="icon-pencil"></i> {{ Lang::line('navigation::lang.Edit')->get(ADM_LANG) }}</a>
-            <a data-module="navigation" data-verb="DELETE" data-title="{{ Lang::line('navigation::lang.Are you sure to delete this link?')->get(ADM_LANG) }}" href="{{URL::base().DS.ADM_URI.DS}}navigation/links/{{$link->id}}" type="button" class="btn btn-danger confirm"><i class="icon-trash icon-white"></i> {{ Lang::line('navigation::lang.Delete')->get(ADM_LANG) }}</a>
+            <a href="{{URL::base().'/'.ADM_URI}}/navigation/links/{{$link->id}}/edit" rel="{{$link->group_id}}" type="button" class="btn ajax"><i class="icon-pencil"></i> {{ Lang::line('navigation::lang.Edit')->get(ADM_LANG) }}</a>
+            <a data-module="navigation" data-verb="DELETE" data-title="{{ Lang::line('navigation::lang.Are you sure to delete this link?')->get(ADM_LANG) }}" href="{{URL::base().'/'.ADM_URI}}/navigation/links/{{$link->id}}" type="button" class="btn btn-danger confirm"><i class="icon-trash icon-white"></i> {{ Lang::line('navigation::lang.Delete')->get(ADM_LANG) }}</a>
         </div>
     
     

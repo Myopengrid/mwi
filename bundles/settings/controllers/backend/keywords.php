@@ -8,7 +8,7 @@ class Settings_Backend_Keywords_Controller extends Admin_Controller {
 
         $this->data['bar'] = array(
             'title'       => Lang::line('settings::lang.Settings')->get(ADM_LANG),
-            'url'         => URL::base() .DS.ADM_URI.'/settings',
+            'url'         => URL::base() .'/'.ADM_URI.'/settings',
             'description' => Lang::line('settings::lang.Allows administrators to update settings such as site name, e-mail messages, etc')->get(ADM_LANG),
             'buttons'     => array(),
         );
