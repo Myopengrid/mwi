@@ -61,11 +61,14 @@ class Installer {
         // Set application config file key
         $config_path = path('app').'config/application'.EXT;
         $config = File::get($config_path);
-        $config = str_replace("'key' => '',", "'key' => '{$key}',", $config, $count);
-        File::put($config_path, $config);
-        if ($count > 0)
+        $newConfig = str_replace("'key' => '',", "'key' => '{$key}',", $config, $count);
+        if(isset($newConfig) and $newConfig != '')
         {
-            Log::info('App configuration updated with secure key');
+            if ($count > 0)
+            {
+                File::put($config_path, $newConfig);
+                Log::info('App configuration updated with secure key');
+            }
         }
         else
         {
@@ -78,15 +81,18 @@ class Installer {
         // Set application config file index.php
         $config_path = path('app').'config/application'.EXT;
         $config = File::get($config_path);
-        $config = str_replace("'index' => 'index.php',", "'index' => '',", $config, $count);
-        File::put($config_path, $config);
-        if ($count > 0)
+        $newConfig = str_replace("'index' => 'index.php',", "'index' => '',", $config, $count);
+        if(isset($newConfig) and $newConfig != '')
         {
-            Log::info('App index configuration updated with secure key');
+            if ($count > 0)
+            {
+                File::put($config_path, $newConfig);
+                Log::info('App configuration \'index\' => \'index.php\' was set to \'index\' => \'\' (mod_rewrite).');
+            }
         }
         else
         {
-            Log::error('App index configuration secure was not updated with secure key. A key already exists.');
+            Log::error('Failed to update app index.php configuration.');
         }
     }
 
@@ -95,15 +101,18 @@ class Installer {
         // Set application config file index.php
         $config_path = path('app').'config/application'.EXT;
         $config = File::get($config_path);
-        $config = str_replace("'installed' => false,", "'installed' => true,", $config, $count);
-        File::put($config_path, $config);
-        if ($count > 0)
+        $newConfig = str_replace("'installed' => false,", "'installed' => true,", $config, $count);
+        if(isset($newConfig) and $newConfig != '')
         {
-            Log::info('App flag installed set');
+            if ($count > 0)
+            {
+                File::put($config_path, $newConfig);
+                Log::info('App flag installed set');
+            }
         }
         else
         {
-            Log::error('App flag installed fail.');
+            Log::error('App flag installed failed.');
         }
     }
 
