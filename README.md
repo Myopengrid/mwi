@@ -29,7 +29,10 @@ Visit your domain to start the installation
 
 
 ## Updating an Existing Installation
-To update your application and keep all your data (database changes), you can copy all the files but you need to reset some settings on 3 files:
+
+To update your application and keep all your data (database changes), keep the bundles directory and public directory, you can overwrite all the other files and directories, be aware if you did some customization to save them and re-apply after the updating process.
+
+You also need to reset some settings on 3 files:
 
 your_directory/application/config/application.php
 
