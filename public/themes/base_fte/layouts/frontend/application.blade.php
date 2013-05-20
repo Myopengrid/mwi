@@ -23,6 +23,7 @@
     {{ Asset::styles() }}
     {{ Asset::container('page')->styles() }}
 
+    <script src="{{ URL::base() }}/themes/base_fte/assets/js/jquery.js"></script>
     {{ Asset::scripts() }}
     {{ Asset::container('page')->scripts() }}
 
@@ -89,7 +90,6 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{ URL::base() }}/themes/base_fte/assets/js/jquery.js"></script>
     <script src="{{ URL::base() }}/themes/base_fte/assets/js/bootstrap.min.js"></script>
     {{ Asset::container('footer')->scripts() }}
   </body>
