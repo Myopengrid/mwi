@@ -8,7 +8,7 @@
         <p><strong>{{ Lang::line('pages::lang.Status')->get(ADM_LANG)}}:</strong> {{ Lang::line('pages::lang.'.$page->status)->get(ADM_LANG) }}</p>
         <p>
             <strong>Slug:</strong>
-            <a id="page-preview" class="cboxElement" href="{{URL::base().'/'.ADM_URI.'/'}}pages/preview/{{ $page->id }}" rel="modal-large" target="_blank">{{URL::base()}}/{{$page->slug}}</a>
+            <a id="page-preview" class="cboxElement" href="{{URL::base().'/'.ADM_URI.'/'}}pages/preview/{{ $page->id }}" rel="modal-large" target="_blank">{{URL::base()}}/page/{{$page->slug}}</a>
         </p>
     </fieldset>
 
