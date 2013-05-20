@@ -2,7 +2,7 @@
 //
 // FRONTEND ROUTES
 // 
-Route::get('(.*)', function($url) 
+Route::get('/page/(:any)', function($url) 
 {
     return Controller::call('pages::frontend.pages@index', array($url));
 });
