@@ -23,8 +23,15 @@
     {{ Asset::styles() }}
     {{ Asset::container('page')->styles() }}
 
+    <script src="{{ URL::base() }}/themes/base_fte/assets/js/jquery.js"></script>
     {{ Asset::scripts() }}
     {{ Asset::container('page')->scripts() }}
+
+    <script type="text/javascript">
+      var CSRF_TOKEN                  = "{{Session::token()}}";
+      var BASE_URL                    = "{{URL::base()}}/";
+      var SITE_URL                    = "{{URL::base()}}/";
+    </script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -89,7 +96,6 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{ URL::base() }}/themes/base_fte/assets/js/jquery.js"></script>
     <script src="{{ URL::base() }}/themes/base_fte/assets/js/bootstrap.min.js"></script>
     {{ Asset::container('footer')->scripts() }}
   </body>
