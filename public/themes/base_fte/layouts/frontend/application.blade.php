@@ -28,7 +28,6 @@
     {{ Asset::container('page')->scripts() }}
 
     <script type="text/javascript">
-      var ADM_URI                     = "{{ADM_URI}}/";
       var CSRF_TOKEN                  = "{{Session::token()}}";
       var BASE_URL                    = "{{URL::base()}}/";
       var SITE_URL                    = "{{URL::base()}}/";
