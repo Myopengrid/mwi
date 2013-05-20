@@ -27,6 +27,13 @@
     {{ Asset::scripts() }}
     {{ Asset::container('page')->scripts() }}
 
+    <script type="text/javascript">
+      var ADM_URI                     = "{{ADM_URI}}/";
+      var CSRF_TOKEN                  = "{{Session::token()}}";
+      var BASE_URL                    = "{{URL::base()}}/";
+      var SITE_URL                    = "{{URL::base()}}/";
+    </script>
+
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
