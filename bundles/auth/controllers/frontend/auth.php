@@ -10,6 +10,7 @@ class Auth_Frontend_Auth_Controller extends Public_Controller
     
     public function get_login()
     {
+        $this->data['meta_title'] = 'Login';
         return $this->theme->render('auth::frontend.login', $this->data);
     }
 
