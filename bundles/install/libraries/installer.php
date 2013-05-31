@@ -682,7 +682,6 @@ class Installer {
                 $core_modules[$module_name] = $core_module_path;
             }  
         }
-        Log::error('CORE MODULES '. var_dump($core_modules));
         unset($core_modules_list);
         return $core_modules;
     }
@@ -745,7 +744,6 @@ class Installer {
 
     public static function migrate($module_slug, $action = 'run')
     {
-        Log::error('installing migration for '. $module_slug);
         require path('sys').'cli'.DS.'dependencies'.EXT;
         
         try
@@ -789,7 +787,6 @@ class Installer {
 
     public static function schema($action, $module_slug)
     {
-        Log::error('installing schema for '. $module_slug);
         try
         {
             // Does the schema task file exists?
@@ -833,7 +830,6 @@ class Installer {
 
     public static function publish($module_slug)
     {
-        Log::error('publishing '. $module_slug);
         require path('sys').'cli'.DS.'dependencies'.EXT;
         
         try
