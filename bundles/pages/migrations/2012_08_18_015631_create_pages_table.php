@@ -15,7 +15,7 @@ class Pages_Create_Pages_Table {
 			$table->string('title', 255);
 			$table->string('slug', 255)->unique();
 			$table->text('body');
-			$table->text('uri');
+			$table->string('uri')->default('');
 			$table->integer('parent_id')->default('0');     
 			$table->integer('revision_id')->default('0');
 			$table->integer('layout_id')->default('0');
