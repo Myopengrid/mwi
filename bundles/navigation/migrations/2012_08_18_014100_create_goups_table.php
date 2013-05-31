@@ -14,8 +14,8 @@ class Navigation_Create_Goups_Table {
 			$table->increments('id');
 		    $table->string('title', 50);
 		    $table->string('slug', 50);
-		    $table->integer('module_id');
-		    $table->boolean('is_core')->default('0');
+		    $table->integer('module_id')->default(0);
+		    $table->boolean('is_core')->default(0);
 			$table->timestamps();
 		});
 	}
