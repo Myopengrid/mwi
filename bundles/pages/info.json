@@ -1,7 +1,7 @@
 {
     "name": "Pages",
     "slug": "pages",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "core_version": "0.0.1",
     "is_core": true,
     "type": "module",

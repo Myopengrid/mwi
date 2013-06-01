@@ -26,10 +26,10 @@ class Settings_Schema_Task {
             'class'       => '', 
             'section'     => '',
             'validation'  => '', 
-            'is_gui'      => '1', 
+            'is_gui'      => 1, 
             'module_slug' => 'settings', 
             'module_id'   => $module->id, 
-            'order'       => '999', 
+            'order'       => 999, 
         );
         $administration_uri = Settings\Model\Setting::create($administration_uri);
 
@@ -44,10 +44,10 @@ class Settings_Schema_Task {
             'class'       => '', 
             'section'     => '',
             'validation'  => '', 
-            'is_gui'      => '1', 
+            'is_gui'      => 1, 
             'module_slug' => 'settings', 
             'module_id'   => $module->id, 
-            'order'       => '999', 
+            'order'       => 999, 
         );
         $site_name = Settings\Model\Setting::create($site_name);
 
@@ -62,10 +62,10 @@ class Settings_Schema_Task {
             'class'       => '', 
             'section'     => '',
             'validation'  => '', 
-            'is_gui'      => '1', 
+            'is_gui'      => 1, 
             'module_slug' => 'settings', 
             'module_id'   => $module->id, 
-            'order'       => '999', 
+            'order'       => 999, 
         );
         $backend_language = Settings\Model\Setting::create($backend_language);
 
@@ -80,10 +80,10 @@ class Settings_Schema_Task {
             'class'       => '', 
             'section'     => '',
             'validation'  => '', 
-            'is_gui'      => '1', 
+            'is_gui'      => 0, 
             'module_slug' => 'settings', 
             'module_id'   => $module->id, 
-            'order'       => '999', 
+            'order'       => 999, 
         );
         $frontend_language = Settings\Model\Setting::create($frontend_language);
 
@@ -93,13 +93,15 @@ class Settings_Schema_Task {
             'description' => 'List of available languages for the application', 
             'type'        => 'hidden', 
             'default'     => '{"en":"English","br":"Português do Brasil","fr":"Français"}',
+            'value'       => '{"en":"English","br":"Português do Brasil","fr":"Français"}',
+            'options'     => '{"en":"English","br":"Português do Brasil","fr":"Français"}',
             'class'       => '', 
             'section'     => '',
             'validation'  => '', 
-            'is_gui'      => '1', 
+            'is_gui'      => 0, 
             'module_slug' => 'settings', 
             'module_id'   => $module->id, 
-            'order'       => '999', 
+            'order'       => 999, 
         );
         $available_languages = Settings\Model\Setting::create($available_languages);
 
@@ -114,10 +116,10 @@ class Settings_Schema_Task {
             'class'       => '', 
             'section'     => '',
             'validation'  => '', 
-            'is_gui'      => '1', 
+            'is_gui'      => 1, 
             'module_slug' => 'settings', 
             'module_id'   => $module->id, 
-            'order'       => '999', 
+            'order'       => 999, 
         );
         $records_per_page = Settings\Model\Setting::create($records_per_page);
 
@@ -132,10 +134,10 @@ class Settings_Schema_Task {
             'class'       => '', 
             'section'     => '',
             'validation'  => '', 
-            'is_gui'      => '1', 
+            'is_gui'      => 1, 
             'module_slug' => 'settings', 
             'module_id'   => $module->id, 
-            'order'       => '999', 
+            'order'       => 999, 
         );
         $site_maintenance = Settings\Model\Setting::create($site_maintenance);
 
@@ -150,10 +152,10 @@ class Settings_Schema_Task {
             'class'       => '', 
             'section'     => '',
             'validation'  => '', 
-            'is_gui'      => '1', 
+            'is_gui'      => 1, 
             'module_slug' => 'settings', 
             'module_id'   => $module->id, 
-            'order'       => '999', 
+            'order'       => 999, 
         );
         
         $settings_time_zone = Settings\Model\Setting::create($settings_time_zone);
@@ -169,10 +171,10 @@ class Settings_Schema_Task {
             'class'       => '', 
             'section'     => '',
             'validation'  => '', 
-            'is_gui'      => '1', 
+            'is_gui'      => 1, 
             'module_slug' => 'settings', 
             'module_id'   => $module->id, 
-            'order'       => '999', 
+            'order'       => 999, 
         );
         $settings_date_format = Settings\Model\Setting::create($settings_date_format);
 
@@ -187,10 +189,10 @@ class Settings_Schema_Task {
             'class'       => '', 
             'section'     => '',
             'validation'  => '', 
-            'is_gui'      => '1', 
+            'is_gui'      => 1, 
             'module_slug' => 'settings', 
             'module_id'   => $module->id, 
-            'order'       => '999', 
+            'order'       => 999, 
         );
         $application_keywords = Settings\Model\Setting::create($application_keywords);
     }

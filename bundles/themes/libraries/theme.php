@@ -330,7 +330,7 @@ class Theme {
         if(ends_with($filename, '.js')) { $asset_type = 'js';  }
         if(ends_with($filename,'.css')) { $asset_type = 'css'; }
         
-        $theme_path = 'themes'.DS.$this->_theme_path.DS.'assets';
+        $theme_path = 'themes/'.$this->_theme_path.'/assets';
         
         $asset_path = null;
         
@@ -344,16 +344,16 @@ class Theme {
             }
             elseif((starts_with($path, 'mod: ')))
             {
-                $asset_path = $this->_modules_asset_path.DS.substr($path, 5).DS;
+                $asset_path = $this->_modules_asset_path.'/'.substr($path, 5).'/';
             }
             else
             {
-                $asset_path = $theme_path.DS.$asset_type.DS.$path.DS;
+                $asset_path = $theme_path.'/'.$asset_type.'/'.$path.'/';
             }
         }
         else
         {
-            $asset_path = $theme_path.DS.$asset_type.DS;
+            $asset_path = $theme_path.'/'.$asset_type.'/';
         }
 
         if($asset_path !== null)
@@ -453,12 +453,12 @@ class Theme {
 
         $bundle_name = $bundle_parts['0'] == 'application' ? '' : $bundle_parts['0'].DS;
         
-        $partial_path = str_replace('.', '/', $bundle_parts['1']);
+        $partial_path = str_replace('.', DS, $bundle_parts['1']);
         
         $theme_view_folder = $this->_theme_absolute_path.DS.'views'.DS;
 
         // Check for a custom path
-        $has_view = $this->_view_exists(str_replace('.', '/', $page));
+        $has_view = $this->_view_exists(str_replace('.', DS, $page));
         if($has_view)
         {
             $view->nest('theme_content', $has_view, $data);
@@ -486,7 +486,7 @@ class Theme {
         }
 
         // try to load from application views folder
-        $has_view = $this->_view_exists('views/'.$page);
+        $has_view = $this->_view_exists('views'.DS.$page);
         if($has_view)
         {
             $view->nest('theme_content', $has_view, $data);
@@ -597,26 +597,26 @@ class Theme {
 
         $bundle_name = $bundle_parts['0'] == 'application' ? '' : $bundle_parts['0'].DS;
         
-        $partial_path = str_replace('.', '/', $bundle_parts['1']);
+        $partial_path = str_replace('.', DS, $bundle_parts['1']);
         
         $theme_view_folder = $this->_theme_absolute_path.DS.'views'.DS;
         
         // Check for a custom path
-        $has_partial = $this->_view_exists(str_replace('.', '/', $partial));
+        $has_partial = $this->_view_exists(str_replace('.', DS, $partial));
         if($has_partial)
         {
             return View::make($has_partial, $data);
         }
 
         // Check on the themes views folder
-        $has_partial = $this->_view_exists($theme_view_folder.$bundle_name.'partials/'.$partial_path);
+        $has_partial = $this->_view_exists($theme_view_folder.$bundle_name.'partials'.DS.$partial_path);
         if($has_partial)
         {
             return View::make($has_partial, $data);
         }
 
         // Check on custom folder (fallback for all themes)
-        $has_partial = $this->_view_exists(path('public').'custom'.DS.'views'.DS.$bundle_name.'partials/'.$partial_path);
+        $has_partial = $this->_view_exists(path('public').'custom'.DS.'views'.DS.$bundle_name.'partials'.DS.$partial_path);
         if($has_partial)
         {
             return View::make($has_partial, $data);
@@ -630,7 +630,7 @@ class Theme {
         }
 
         // try to load from application views folder
-        $has_partial = $this->_view_exists('partials/'.$partial_path);
+        $has_partial = $this->_view_exists('partials'.DS.$partial_path);
         if($has_partial)
         {
             return View::make($has_partial, $data);

@@ -98,7 +98,7 @@ class Registration_Schema_Task {
             'class'       => '',
             'section'     => '',
             'validation'  => '',
-            'is_gui'      => '',
+            'is_gui'      => 1,
             'module_slug' => 'registration',
             'module_id'   => $registration_module->id,
         );
@@ -115,7 +115,7 @@ class Registration_Schema_Task {
             'class'       => '',
             'section'     => '',
             'validation'  => '',
-            'is_gui'      => '',
+            'is_gui'      => 1,
             'module_slug' => 'registration',
             'module_id'   => $registration_module->id,
         );
@@ -132,7 +132,7 @@ class Registration_Schema_Task {
             'class'       => '',
             'section'     => '',
             'validation'  => '',
-            'is_gui'      => '',
+            'is_gui'      => 1,
             'module_slug' => 'registration',
             'module_id'   => $registration_module->id,
         );
@@ -149,7 +149,7 @@ class Registration_Schema_Task {
             'class'       => '',
             'section'     => '',
             'validation'  => '',
-            'is_gui'      => '',
+            'is_gui'      => 1,
             'module_slug' => 'registration',
             'module_id'   => $registration_module->id,
         );
@@ -166,7 +166,7 @@ class Registration_Schema_Task {
             'class'       => '', 
             'section'     => '',
             'validation'  => '', 
-            'is_gui'      => '1', 
+            'is_gui'      => 1, 
             'module_slug' => 'registration', 
             'module_id'   => $registration_module->id, 
             'order'       => '999', 
@@ -184,7 +184,7 @@ class Registration_Schema_Task {
             'class'       => '',
             'section'     => '',
             'validation'  => '',
-            'is_gui'      => '',
+            'is_gui'      => 1,
             'module_slug' => 'registration',
             'module_id'   => $registration_module->id,
         );

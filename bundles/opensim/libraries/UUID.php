@@ -18,6 +18,7 @@ class UUID {
         // Adds empty array as third parameter 
         // for compatibility with php 5.3
         // Thanks GwynethLlewelyn
-        return (bool)preg_match('#^[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}$#', $uuid, array());
+        $dummy = array();
+        return (bool)preg_match('#^[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}$#', $uuid, $dummy);
     }
 }

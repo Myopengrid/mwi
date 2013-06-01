@@ -21,7 +21,7 @@
                                 @if($setting->type == 'text')
                                 <span class="required-icon"></span>
                                 @endif
-                                <span class="help-inline">{{ $errors->has($setting->slug) ? $errors->first($setting->slug, '<small style="color:#dd3c10;">:message</small>') : '' }}</span>
+                                <span class="help-inline">{{ $errors->has($setting->slug) ? $errors->first($setting->slug, '<small style="color:#dd3c10;">:message</small>') : $setting->description }}</span>
                                 <span class="move-handle"></span>
                             </div>
                         </div>

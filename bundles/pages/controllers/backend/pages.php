@@ -314,7 +314,7 @@ class Pages_Backend_Pages_Controller extends Admin_Controller {
         $page = Pages\Model\Page::find($page_id);
         if( ! is_null($page))
         {
-            return Redirect::to($page->slug);
+            return Redirect::to('page/'.$page->slug);
         }
         else
         {

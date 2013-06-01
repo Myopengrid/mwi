@@ -2,7 +2,7 @@
 //
 // FRONTEND ROUTES
 // 
-Route::get('(.*)', function($url) 
+Route::get('/page/(.*)', function($url) 
 {
     return Controller::call('pages::frontend.pages@index', array($url));
 });
@@ -57,6 +57,11 @@ Route::delete(ADM_URI.'/(:bundle)/(:num)', function($parameter = null)
 Route::get(ADM_URI.'/(:bundle)/preview/(:num)', function($parameter = null)
 {
     return Controller::call('pages::backend.pages@preview', array($parameter));
+});
+
+Route::get('/', function()
+{
+    return Redirect::to('page/home');
 });
 
 

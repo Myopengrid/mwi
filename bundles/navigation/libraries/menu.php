@@ -63,6 +63,11 @@ class Menu {
                 $items = \Event::until("menu.make.navigation: {$menu}", array($items));    
             }
 
+            if (\Event::listeners("menu.make.navigation", array($items)))
+            {
+                $items = \Event::until("menu.make.navigation", array($items));    
+            }
+
             return $this->make($items, '', $partial_path);
         }
         else

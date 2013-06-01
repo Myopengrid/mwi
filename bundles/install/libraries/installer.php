@@ -59,7 +59,7 @@ class Installer {
         $key = Str::random(array_get($arguments, 0, 32));
 
         // Set application config file key
-        $config_path = path('app').'config/application'.EXT;
+        $config_path = path('app').'config'.DS.'application'.EXT;
         $config = File::get($config_path);
         $newConfig = str_replace("'key' => '',", "'key' => '{$key}',", $config, $count);
         if(isset($newConfig) and $newConfig != '')
@@ -79,7 +79,7 @@ class Installer {
     public static function set_app_index()
     {
         // Set application config file index.php
-        $config_path = path('app').'config/application'.EXT;
+        $config_path = path('app').'config'.DS.'application'.EXT;
         $config = File::get($config_path);
         $newConfig = str_replace("'index' => 'index.php',", "'index' => '',", $config, $count);
         if(isset($newConfig) and $newConfig != '')
@@ -99,7 +99,7 @@ class Installer {
     public static function set_app_installed()
     {
         // Set application config file index.php
-        $config_path = path('app').'config/application'.EXT;
+        $config_path = path('app').'config'.DS.'application'.EXT;
         $config = File::get($config_path);
         $newConfig = str_replace("'installed' => false,", "'installed' => true,", $config, $count);
         if(isset($newConfig) and $newConfig != '')
@@ -607,6 +607,16 @@ class Installer {
 
     public static function is_really_writable($file)
     {
+        // FIX THIS
+        // This is only to 
+        // by pass permissions on
+        // windows machines with 
+        // microsoft weird ACL crap
+        if(DS === '\\')
+        {
+            return TRUE;
+        }
+
         // If we're on a Unix server with safe_mode off we call is_writable
         if (DS === '/' && (bool) @ini_get('safe_mode') === FALSE)
         {
@@ -616,9 +626,10 @@ class Installer {
         /* For Windows servers and safe_mode "on" installations we'll actually
          * write a file then read it. Bah...
          */
-        if (is_dir($file))
+
+        if(is_dir($file))
         {
-            $file = rtrim($file, '/').'/'.md5(mt_rand(1,100).mt_rand(1,100));
+            $file = rtrim($file, DS).DS.md5(mt_rand(1,100).mt_rand(1,100));
             if (($fp = @fopen($file, FOPEN_WRITE_CREATE)) === FALSE)
             {
                 return FALSE;
@@ -681,7 +692,7 @@ class Installer {
         
         $core_modules = self::get_core_modules_list();
         
-        require path('sys').'cli/dependencies'.EXT;
+        require path('sys').'cli'.DS.'dependencies'.EXT;
 
         $mig = \Laravel\CLI\Command::run(array('migrate:install'));
 
@@ -733,11 +744,11 @@ class Installer {
 
     public static function migrate($module_slug, $action = 'run')
     {
-        require path('sys').'cli/dependencies'.EXT;
+        require path('sys').'cli'.DS.'dependencies'.EXT;
         
         try
         {
-            $migrations_path = path('bundle').$module_slug.'/migrations/'; 
+            $migrations_path = path('bundle').$module_slug.DS.'migrations'.DS; 
             if(File::exists($migrations_path))
             {
                 $migration_files = glob($migrations_path.'*.php');
@@ -769,7 +780,7 @@ class Installer {
         catch (\Exception $e)
         {
             Log::error($e->getMessage());
-            static::$errors->add('installer', 'Failed to run migrations.');
+            //static::$errors->add('installer', 'Failed to run migrations.');
             return false;
         }
     }
@@ -819,11 +830,11 @@ class Installer {
 
     public static function publish($module_slug)
     {
-        require path('sys').'cli/dependencies'.EXT;
+        require path('sys').'cli'.DS.'dependencies'.EXT;
         
         try
         {
-            $module_assets_path = path('bundle').$module_slug.'/public/'; 
+            $module_assets_path = path('bundle').$module_slug.DS.'public'.DS; 
             if(\File::exists($module_assets_path))
             {
                 \Bundle::register($module_slug);
@@ -851,7 +862,7 @@ class Installer {
         extract($database_info);
 
         // Open the template file
-        $template   = file_get_contents(path('bundle').'install/file_templates/database.tpl');
+        $template   = file_get_contents(path('bundle').'install'.DS.'file_templates'.DS.'database.tpl');
 
         $replace = array(
             '__DRIVER__'    => $driver,

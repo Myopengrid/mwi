@@ -23,21 +23,20 @@ class Install_Frontend_Install_Controller extends Base_Controller {
      * @access private
      * @var array
      */
-    private $writeable_files = array(
-        'application/config/application.php',
-        'application/config/database.php',
-    );
-
+    private $writeable_files = array();
 
     public function __construct()
     {
         parent::__construct();
-        
-        $this->writeable_directories[] = basename(path('public')).'/bundles';
-        $this->writeable_directories[] = basename(path('public')).'/themes';
 
-        Asset::add('jquery', 'js/jquery.js')->bundle('install');
-        Asset::add('installer', 'js/installer.js')->bundle('install');
+        $this->writeable_files[] = 'application'.DS.'config'.DS.'application.php';
+        $this->writeable_files[] = 'application'.DS.'config'.DS.'database.php';
+        
+        $this->writeable_directories[] = basename(path('public')).DS.'bundles';
+        $this->writeable_directories[] = basename(path('public')).DS.'themes';
+
+        Asset::add('jquery', 'js'.DS.'jquery.js')->bundle('install');
+        Asset::add('installer', 'js'.DS.'installer.js')->bundle('install');
         $this->layout->title = 'Sagui - Myopengrid Web Interface Installer';
     }
 
@@ -166,35 +165,35 @@ class Install_Frontend_Install_Controller extends Base_Controller {
         $data = new stdClass();
         
 
-        $app_path = explode('/', path('app'));
+        $app_path = explode(DS, path('app'));
         foreach ($app_path as $key => $value) 
         {
            if(empty($value))
             unset($app_path[$key]);
         }
         array_pop($app_path);
-        $app_path = implode('/', $app_path);
+        $app_path = implode(DS, $app_path);
         
         // Get the write permissions for the folders
         foreach($this->writeable_directories as $dir)
         {
             // Try CHMOD if the operation is permited will to automatically
-            @chmod('/'.$app_path.'/'.$dir, 0777);
-            $permissions['directories'][$dir] = Installer::is_really_writable('/'.$app_path.'/'.$dir);
+            @chmod(DS.$app_path.DS.$dir, 0777);
+            $permissions['directories'][$dir] = Installer::is_really_writable(DS.$app_path.DS.$dir);
         }
 
         foreach($this->writeable_files as $file)
         {
             // Try CHMOD if the operation is permited will to automatically
-            @chmod('/'.$app_path.'/'.$file, 0666);
-            $permissions['files'][$file] = Installer::is_really_writable('/'.$app_path.'/'.$file);
+            @chmod(DS.$app_path.DS.$file, 0666);
+            $permissions['files'][$file] = Installer::is_really_writable(DS.$app_path.DS.$file);
         }
 
         // we are asking to read file1
         // but if mod_rewrite is enable it will 
         // return file2 content (true) the .htaccess file is 
         // in the public folder /bundles/install/test_mod_rewrite/.htaccess
-        $file = @file_get_contents(URL::base().'/bundles/install/test_mod_rewrite/file1.txt');
+        $file = @file_get_contents(URL::base().DS.'bundles'.DS.'install'.DS.'test_mod_rewrite'.DS.'file1.txt');
 
         if($file == 'true')
         {
