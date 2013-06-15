@@ -6,7 +6,7 @@ $db_is_ready = Config::get('settings::core.passes_db_settings');
 
 if((bool)$db_is_ready)
 {
-    Event::listen('users.created', function($user)
+    Event::listen('users.created', function($user, $customAvatar = 'ruth')
     {
 
         $account = \Opensim\Model\Os\UserAccount::where_FirstName($user->avatar_first_name)
@@ -16,7 +16,7 @@ if((bool)$db_is_ready)
         if(is_null($account))
         {
             $account = new \Opensim\Model\Os\UserAccount;
-            $opensim_account = $account->create_account($user);
+            $opensim_account = $account->create_account($user, $customAvatar);
             Log::debug('Opensim creating new account.');
         }
         else

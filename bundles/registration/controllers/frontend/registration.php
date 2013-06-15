@@ -9,7 +9,7 @@ class Registration_Frontend_Registration_Controller extends Public_Controller {
         {
             $this->data['message']      = __('registration::lang.Sign-up is temporarily disabled')->get(APP_LANG);
             $this->data['message_type'] = 'info';
-            return Redirect::to('home')->with($this->data);
+            return Redirect::to('page/home')->with($this->data);
         }
         
         $this->data['meta_title'] = 'Sign Up';
@@ -100,7 +100,7 @@ class Registration_Frontend_Registration_Controller extends Public_Controller {
                 $this->data['message']      = Lang::line('registration::lang.welcome_signup', array('site_name' => $site_name))->get(APP_LANG);
                 $this->data['message_type'] = 'success';
                 
-                return Redirect::to('home')->with($this->data);
+                return Redirect::to('page/home')->with($this->data);
             }
             else
             {
@@ -138,7 +138,7 @@ class Registration_Frontend_Registration_Controller extends Public_Controller {
                 
                 $this->data['message']      = __('registration::lang.Thank you Please check your email to activate your new account')->get(APP_LANG);
                 $this->data['message_type'] = 'success';
-                return Redirect::to('home')->with($this->data);
+                return Redirect::to('page/home')->with($this->data);
             }
 
         }
@@ -161,7 +161,7 @@ class Registration_Frontend_Registration_Controller extends Public_Controller {
         {
             $this->data['message']      = __('registration::lang.A problem occurred while activating your account please contact support')->get(APP_LANG);
             $this->data['message_type'] = 'error';
-            return Redirect::to('home')->with($this->data);
+            return Redirect::to('page/home')->with($this->data);
         }
 
         // Find  and validate account to activate
@@ -170,7 +170,7 @@ class Registration_Frontend_Registration_Controller extends Public_Controller {
         {
             $this->data['message']      = __('registration::lang.A problem occurred while activating your account please contact support')->get(APP_LANG);
             $this->data['message_type'] = 'error';
-            return Redirect::to('home')->with($this->data);
+            return Redirect::to('page/home')->with($this->data);
         }
 
         // Activate account
@@ -189,7 +189,7 @@ class Registration_Frontend_Registration_Controller extends Public_Controller {
         // Redirect with success message
         $this->data['message']      = __('registration::lang.Your account was successfully activated')->get(APP_LANG);
         $this->data['message_type'] = 'success';
-        return Redirect::to('home')->with($this->data);
+        return Redirect::to('page/home')->with($this->data);
     }
 
     public function get_pwreset()
@@ -260,7 +260,7 @@ class Registration_Frontend_Registration_Controller extends Public_Controller {
 
             $this->data['message']      = __('registration::lang.An email was sent to you with instructions to reset your password')->get(APP_LANG);
             $this->data['message_type'] = 'success';
-            return Redirect::to('home')->with($this->data);
+            return Redirect::to('page/home')->with($this->data);
         }
 
         return Redirect::back()->with_errors($validation)->with_input();
@@ -281,7 +281,7 @@ class Registration_Frontend_Registration_Controller extends Public_Controller {
         {
             $this->data['message']      = __('registration::lang.Invalid password reset code or it\'s older then 24H')->get(APP_LANG);
             $this->data['message_type'] = 'error';
-            return Redirect::to('home')->with($this->data);
+            return Redirect::to('page/home')->with($this->data);
         }
     }
 
@@ -302,7 +302,7 @@ class Registration_Frontend_Registration_Controller extends Public_Controller {
             {
                 $this->data['message']      = __('registration::lang.An error occurred while updating your password please contact support')->get(APP_LANG);
                 $this->data['message_type'] = 'error';
-                return Redirect::to('home')->with($this->data);
+                return Redirect::to('page/home')->with($this->data);
             }
         
             $pass_was_updated = Registration\User::update_password(Input::get('password'), Input::get('user_id'));
@@ -324,7 +324,7 @@ class Registration_Frontend_Registration_Controller extends Public_Controller {
                 $this->data['message_type'] = 'error';
             }
 
-            return Redirect::to('home')->with($this->data);
+            return Redirect::to('page/home')->with($this->data);
         }
 
         return Redirect::to('registration/reset_pass')->with_errors($validation)->with_input();
