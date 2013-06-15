@@ -24,7 +24,7 @@ class UserAccount extends Eloquent {
         if( !isset($user_account) )
         {
             $ServiceURLs  = 'HomeURI= GatekeeperURI= InventoryServerURI= AssetServerURI=';
-            
+
             $user_account = new self;
             
             $user_account->PrincipalID  = $user->uuid;
@@ -33,7 +33,7 @@ class UserAccount extends Eloquent {
             $user_account->LastName     = $user->avatar_last_name;
             $user_account->Email        = $user->email;
             $user_account->ServiceURLs  = $ServiceURLs;
-            $user_account->Created      = $user->created_at->getTimestamp();
+            $user_account->Created      = time();
             $user_account->UserLevel    = 0;
             $user_account->UserFlags    = 0;
             $user_account->UserTitle    = '';
@@ -123,6 +123,7 @@ class UserAccount extends Eloquent {
         {
             $invento = InventoryItem::insert($items);
         }
+        
 
         // Load Avatar appearance
         $items_array = Event::until('opensim.load.avatar.appearance', array($default_avatar_name, $user));
