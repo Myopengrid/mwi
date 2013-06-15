@@ -53,4 +53,3 @@ Route::get(ADM_URI.'/(:bundle)/regions', function()
 {
     return Controller::call('opensim::backend.regions@index');
 });
-
