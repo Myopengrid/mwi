@@ -35,8 +35,8 @@ class Install_Frontend_Install_Controller extends Base_Controller {
         $this->writeable_directories[] = basename(path('public')).DS.'bundles';
         $this->writeable_directories[] = basename(path('public')).DS.'themes';
 
-        Asset::add('jquery', 'js'.DS.'jquery.js')->bundle('install');
-        Asset::add('installer', 'js'.DS.'installer.js')->bundle('install');
+        Asset::add('jquery', 'js/jquery.js')->bundle('install');
+        Asset::add('installer', 'js/installer.js')->bundle('install');
         $this->layout->title = 'Sagui - Myopengrid Web Interface Installer';
     }
 
