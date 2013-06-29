@@ -1,6 +1,6 @@
 <div style="margin-top:30px;" class="row">
     <div class="span12">
-        {{ Form::open_for_files(URL::base() .'/admin/modules/upload', 'POST', array('class' => 'form-horizontal')) }}
+        {{ Form::open_for_files(URL::base() .'/'.ADM_URI.'/modules/upload', 'POST', array('class' => 'form-horizontal')) }}
             
             <div style="display:none">
             {{ Form::token() }}
