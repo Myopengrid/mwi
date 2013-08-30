@@ -50,3 +50,23 @@ Autoloader::namespaces(array(
     'Email\Model' => __DIR__.DS.'models'.DS,
     'Email'       => __DIR__.DS.'libraries'.DS,
 ));
+
+/*
+|--------------------------------------------------------------------------
+| Load Application Helpers file
+|--------------------------------------------------------------------------
+|
+| Load all email helper functions available globaly in the application
+|
+*/
+include(__DIR__.DS.'helpers.php');
+
+/*
+|--------------------------------------------------------------------------
+| Email Event Listners
+|--------------------------------------------------------------------------
+|
+| Load email listners for module
+|
+*/
+include(dirname(__FILE__).DS.'events'.EXT);
