@@ -39,7 +39,7 @@ class Pages_Backend_Pages_Controller extends Admin_Controller {
     {
         $this->data['section_bar'] = array(
             Lang::line('pages::lang.Pages')->get(ADM_LANG)     => URL::base().'/'.ADM_URI.'/pages',
-            Lang::line('pages::lang.Edit Page')->get(ADM_LANG) => URL::base().'/'.ADM_URI.'/pages/edit/'.$page_id,
+            Lang::line('pages::lang.Edit Page')->get(ADM_LANG) => URL::base().'/'.ADM_URI.'/pages/'.$page_id.'/edit',
             Lang::line('pages::lang.New Page')->get(ADM_LANG)  => URL::base().'/'.ADM_URI.'/pages/new',
         );
 

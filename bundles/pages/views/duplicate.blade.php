@@ -21,12 +21,9 @@
         $(function(){
 
             mwi.init_ckeditor = function(){
-
             $('textarea.wysiwyg-advanced').ckeditor({
                 toolbar: [
                     ['Maximize'],
-                    ['pyroimages', 'pyrofiles'],
-                    ['Cut','Copy','Paste','PasteFromWord'],
                     ['Undo','Redo','-','Find','Replace'],
                     ['Link','Unlink'],
                     ['Table','HorizontalRule','SpecialChar'],
@@ -35,7 +32,6 @@
                     ['Format', 'FontSize', 'Subscript','Superscript', 'NumberedList','BulletedList','Outdent','Indent','Blockquote'],
                     ['ShowBlocks', 'RemoveFormat', 'Source']
                 ],
-                extraPlugins: 'pyroimages,pyrofiles',
                 width: '90%',
                 height: 400,
                 dialog_backgroundCoverColor: '#000',

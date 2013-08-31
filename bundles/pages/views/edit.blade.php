@@ -25,7 +25,6 @@
             $('textarea.wysiwyg-advanced').ckeditor({
                 toolbar: [
                     ['Maximize'],
-                    ['Cut','Copy','Paste','PasteFromWord'],
                     ['Undo','Redo','-','Find','Replace'],
                     ['Link','Unlink'],
                     ['Table','HorizontalRule','SpecialChar'],
