@@ -10,7 +10,8 @@ class Vector {
         }
         
         $string = trim($string);
+        $out  = array();
 
-        return (bool)preg_match_all('/^\s?<\s?\.?\d+\.?\d*?\s?,\s?\.?\d+\.?\d*?\s?,\s?\.?\d+\.?\d*?\s?\>\s?$/i', $string);
+        return (bool)preg_match_all('/^\s?<\s?\.?\d+\.?\d*?\s?,\s?\.?\d+\.?\d*?\s?,\s?\.?\d+\.?\d*?\s?\>\s?$/i', $string, $out);
     }
 }
