@@ -79,7 +79,7 @@
         <div class="control-group input-prepend">
           {{ Form::label('slug', Lang::line('pages::lang.Slug')->get(ADM_LANG), array('class' => 'control-label')) }}
           <div class="controls">
-            <span class="add-on span1">{{URL::base()}}/</span>
+            <span class="add-on span1">{{URL::base()}}/page/</span>
             {{ Form::text('slug', $page->slug, array('class' => 'span2')) }}
             <span class="help-inline">{{ $errors->has('slug') ? $errors->first('slug') : '' }}</span>
           </div>
