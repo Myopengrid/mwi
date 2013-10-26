@@ -31,7 +31,7 @@ class Opensim_Backend_Regions_Controller extends Admin_Controller {
         }
         
         $regions = DB::connection('opensim')->table('regions')
-            ->left_join('UserAccounts', 'regions.owner_uuid', '=', 'UserAccounts.PrincipalID')
+            ->left_join('useraccounts', 'regions.owner_uuid', '=', 'useraccounts.PrincipalID')
             ->paginate(Config::get('settings::core.records_per_page'));
 
         $this->data['regions'] = $regions->results;
@@ -44,7 +44,7 @@ class Opensim_Backend_Regions_Controller extends Admin_Controller {
     public function post_ajax()
     {
         $regions = DB::connection('opensim')->table('regions');
-        $regions->left_join('UserAccounts', 'regions.owner_uuid', '=', 'UserAccounts.PrincipalID');
+        $regions->left_join('useraccounts', 'regions.owner_uuid', '=', 'useraccounts.PrincipalID');
         
         $search_by = Input::get('search_by');
         $search_for = Input::get('search_for');
@@ -55,12 +55,12 @@ class Opensim_Backend_Regions_Controller extends Admin_Controller {
             {
                 if($search_by == 'ownerName')
                 {
-                    $regions->where('UserAccounts.firstName', 'LIKE', '%'.$search_for.'%');
-                    $regions->or_where('UserAccounts.lastName', 'LIKE', '%'.$search_for.'%');
+                    $regions->where('useraccounts.firstName', 'ILIKE', '%'.$search_for.'%');
+                    $regions->or_where('useraccounts.lastName', 'ILIKE', '%'.$search_for.'%');
                 }
                 if($search_by == 'regionName')
                 {
-                    $regions->where('regions.regionName', 'LIKE', '%'.$search_for.'%');
+                    $regions->where('regions.regionName', 'ILIKE', '%'.$search_for.'%');
                 }
             }
 

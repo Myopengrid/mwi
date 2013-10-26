@@ -45,7 +45,7 @@ class Splashscreen_Frontend_Splashscreen_Controller extends Public_Controller {
                 $show_active_users = Config::get('settings::core.splashscreen_show_active_users');
                 if($show_active_users == 'yes')
                 {
-                    $this->data['grid_status_block']['active_users'] = DB::connection('opensim')->table('GridUser')
+                    $this->data['grid_status_block']['active_users'] = DB::connection('opensim')->table('griduser')
                         ->where('Login', '>=', strtotime("-30 days"))->count();//time()-2592000);
                 }
 
@@ -55,10 +55,10 @@ class Splashscreen_Frontend_Splashscreen_Controller extends Public_Controller {
                     // Because users can get stuck 
                     // we will just count presences
                     // newer then 2 days ago
-                    $this->data['grid_status_block']['users_online'] = \DB::connection('opensim')->table('Presence')
-                    ->join('GridUser', 'GridUser.UserID', '=', 'Presence.UserID')
-                    ->where('Presence.LastSeen', '>', strtotime("-2 days"))
-                    ->where('GridUser.Online', '=', 'true')->count(); 
+                    $this->data['grid_status_block']['users_online'] = \DB::connection('opensim')->table('presence')
+                    ->join('griduser', 'griduser.UserID', '=', 'presence.UserID')
+                    ->where('presence.LastSeen', '>', strtotime("-2 days"))
+                    ->where('griduser.Online', '=', 'true')->count(); 
                 }
             }
         }
