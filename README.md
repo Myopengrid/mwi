@@ -16,6 +16,7 @@ Set full permissions to directories:
     chmod -R 777 bundles
     chmod -R 777 public/themes
     chmod -R 777 public/bundles
+    chmod -R 777 public/media
     
     
 Upload the contents of the Mwi public directory to your webserver
