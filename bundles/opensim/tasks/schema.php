@@ -37,7 +37,7 @@ class Opensim_Schema_Task {
             'type'        => 'select', 
             'default'     => 'mysql', 
             'value'       => 'mysql', 
-            'options'     => '{"mysql":"Mysql","pgsql":"Postgres"}', 
+            'options'     => '{"mysql":"Mysql"}', 
             'section'     => 'opensim_db_settings',
             'validation'  => '',
             'class'       => '', 

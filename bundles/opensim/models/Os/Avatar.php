@@ -5,6 +5,6 @@ use Eloquent;
 class Avatar extends Eloquent {
 
     public static $connection = 'opensim';
-    public static $table      = 'avatars';
+    public static $table      = 'Avatars';
     public static $timestamps = false;
 }
