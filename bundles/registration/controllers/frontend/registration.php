@@ -75,7 +75,7 @@ class Registration_Frontend_Registration_Controller extends Public_Controller {
 
             $new_user->uuid              = Mwi_Core::random_uuid();
             $new_user->email             = Input::get('email');
-            $new_user->username          = Input::get('username');
+            $new_user->username          = Input::get('avatar_first_name').Input::get('avatar_last_name');
             $new_user->avatar_first_name = Input::get('avatar_first_name');
             $new_user->avatar_last_name  = Input::get('avatar_last_name');
             $new_user->group_id          = $group_id;
