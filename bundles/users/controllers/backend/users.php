@@ -358,7 +358,7 @@ class Users_Backend_Users_Controller extends Admin_Controller {
         }
         else
         {
-            return Redirect::to(ADM_URI.'/users/edit/'.$edit_user->id)
+            return Redirect::to(ADM_URI.'/users/'.$edit_user->id.'/edit')
                             ->with_errors($validation)
                             ->with_input();
         }
