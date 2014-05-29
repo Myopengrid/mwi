@@ -240,7 +240,7 @@ class Users_Backend_Users_Controller extends Admin_Controller {
         $this->data['section_bar'] = array(
             __('users::lang.Users')->get(ADM_LANG)    => URL::base().'/'.ADM_URI.'/users',
             __('users::lang.New User')->get(ADM_LANG) => URL::base().'/'.ADM_URI.'/users/new',
-            __('users::lang.Edit')->get(ADM_LANG)     => URL::base().'/'.ADM_URI.'/users/edit/'.$user_id,
+            __('users::lang.Edit')->get(ADM_LANG)     => URL::base().'/'.ADM_URI.'/users/'.$user_id.'/edit',
         );
         
         if(\Bundle::exists('groups'))
@@ -358,7 +358,7 @@ class Users_Backend_Users_Controller extends Admin_Controller {
         }
         else
         {
-            return Redirect::to(ADM_URI.'/users/edit/'.$edit_user->id)
+            return Redirect::to(ADM_URI.'/users/'.$edit_user->id.'/edit')
                             ->with_errors($validation)
                             ->with_input();
         }
