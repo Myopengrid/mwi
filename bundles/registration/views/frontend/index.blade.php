@@ -54,6 +54,7 @@ body {
                     </div>
                 </div>
 
+                <!--
                 <div class="control-group {{ $errors->has('username') ? 'error' : '' }}">
                     <div class="controls">
                         {{ \Form::text('username', Input::old('username'), array('class' => 'input-block-level', 'placeholder' => 'Username' )) }}
@@ -61,6 +62,7 @@ body {
                         <span class="help-inline">{{ $errors->has('username') ? $errors->first('username', '<div class="auth-login-error">:message</div>') : '' }}</span>
                     </div>
                 </div>
+                -->
 
 
                 <div class="control-group {{ $errors->has('avatar_first_name') ? 'error' : '' }}">

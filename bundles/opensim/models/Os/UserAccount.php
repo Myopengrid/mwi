@@ -8,7 +8,7 @@ use Laravel\Log;
 class UserAccount extends Eloquent {
 
     public static $connection = 'opensim';
-    public static $table      = 'UserAccounts';
+    public static $table      = 'useraccounts';
     public static $timestamps = false;
     public static $key        = 'PrincipalID';
 

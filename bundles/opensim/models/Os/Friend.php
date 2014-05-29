@@ -5,6 +5,6 @@ use Eloquent;
 class Friend extends Eloquent {
     
     public static $connection = 'opensim';
-    public static $table      = 'Friends';
+    public static $table      = 'friends';
     public static $timestamps = false;
 }

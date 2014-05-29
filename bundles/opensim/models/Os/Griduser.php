@@ -5,6 +5,6 @@ use Eloquent;
 class Griduser extends Eloquent {
     
     public static $connection = 'opensim';
-    public static $table      = 'GridUser';
+    public static $table      = 'griduser';
     public static $timestamps = false;
 }
